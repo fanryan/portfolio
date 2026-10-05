@@ -1,0 +1,51 @@
+---
+import { projects } from '../../data/projects';
+import { site } from '../../data/site';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Tags from '../ui/Tags.astro';
+import Disclosure from '../ui/Disclosure.astro';
+---
+
+<section id="projects" class="section">
+  <SectionHeading
+    number="02"
+    title="Selected projects"
+    note="All repositories ↗"
+    href={site.github}
+  />
+  <div class="project-grid">
+    {projects.map((project, index) => (
+      <article class="project" data-tone={project.tone}>
+        <div class="project-visual" aria-hidden="true">
+          <span class="project-number">
+            {String(index + 1).padStart(2, '0')} /
+          </span>
+          <div class="flow">
+            {project.flow.map((step, i) => (
+              <>
+                <span>{step}</span>
+                {i < project.flow.length - 1 && <b>↓</b>}
+              </>
+            ))}
+          </div>
+        </div>
+        <div class="project-content">
+          <p class="eyebrow">{project.label}</p>
+          <h3>{project.name}</h3>
+          <p>{project.summary}</p>
+          <Tags items={project.stack} />
+          <Disclosure label="What I worked on">
+            <ul>
+              {project.details.map((detail) => (
+                <li>{detail}</li>
+              ))}
+            </ul>
+          </Disclosure>
+          <a class="repo-link" href={project.repository}>
+            View GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

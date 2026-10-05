@@ -1,0 +1,18 @@
+---
+import { about } from '../../data/site';
+import SectionHeading from '../ui/SectionHeading.astro';
+import PhotoJournal from '../PhotoJournal.astro';
+---
+
+<section id="about" class="section about">
+  <SectionHeading
+    number="04"
+    title="After hours"
+    note="A few photos along the way"
+  />
+  <div class="about-intro">
+    <p>{about.description}</p>
+    <p>{about.aside}</p>
+  </div>
+  <PhotoJournal />
+</section>

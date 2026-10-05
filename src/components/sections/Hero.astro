@@ -1,0 +1,35 @@
+---
+import { site, hero } from '../../data/site';
+import ProfileLinks from '../ui/ProfileLinks.astro';
+---
+
+<section class="hero" id="home" aria-labelledby="intro-title">
+  <div class="hero-copy">
+    <p class="eyebrow">{hero.eyebrow}</p>
+    <p class="hello">{hero.greeting}</p>
+    <h1 id="intro-title">
+      {site.name}
+      <span>.</span>
+    </h1>
+    <p class="intro">{hero.intro}</p>
+    <p class="hero-description">{hero.description}</p>
+    <div class="hero-links">
+      <a class="button sky" href="#experience">
+        Explore my work <span aria-hidden="true">↓</span>
+      </a>
+      <ProfileLinks class="text-link" resumeFirst />
+    </div>
+  </div>
+  <figure class="portrait">
+    <img {...hero.portrait} fetchpriority="high" />
+    <figcaption>
+      <span>{site.name.toUpperCase()}</span>
+      <span>{hero.caption}</span>
+    </figcaption>
+  </figure>
+  <div class="hero-bottom">
+    {hero.interests.map((interest) => (
+      <span>{interest}</span>
+    ))}
+  </div>
+</section>

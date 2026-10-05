@@ -1,42 +1,59 @@
 # Ryan Fan — Portfolio
 
-Standalone Astro + TypeScript portfolio, with locally hosted fonts and photos. No database, backend service or external font requests.
+My personal portfolio, featuring software engineering projects, internship experience, education and a photo journal of life outside work.
 
-## Develop
+The site uses a forest-green and sky-blue visual theme, locally hosted typography, and a responsive layout. Project and experience details expand on demand, while the photo journal supports horizontal browsing and a keyboard-accessible full-image viewer.
 
-Requires Node.js 22.12+ (Node 24 LTS recommended).
+## Featured work
+
+- **[PayCore](https://github.com/fanryan/paycore)** — payment processing and settlement in Go.
+- **[LedgerFlow](https://github.com/fanryan/ledgerflow)** — double-entry accounting and reconciliation with Spring Boot.
+- **[NUSpot](https://github.com/fanryan/nuspot)** — a team-built campus discovery app.
+
+## Built with
+
+- Astro and TypeScript
+- Custom CSS with shared theme tokens
+- A small vanilla TypeScript photo viewer
+- Fontsource for locally hosted fonts
+
+Pages are generated as static HTML. No database or backend service is required. Photo links and expandable content remain usable without JavaScript.
+
+## Run locally
+
+Use Node.js 24 (see `.nvmrc`).
 
 ```sh
 npm ci
 npm run dev
 ```
 
-## Validate and build
-
 ```sh
+npm run format:check
+npm run test:content
 npm run build
 npm run preview
 ```
 
-## Content
+## Project structure
 
-- `src/data/content.ts`: experience and project summaries, details, stacks and links.
-- `src/pages/index.astro`: introduction, education, hall activities and personal copy.
-- `src/styles/global.css`: forest + sky palette and responsive styling.
-- `public/images`: photos and organisation logos. Keep names stable to replace assets.
+```text
+src/
+  components/        Reusable UI and page sections
+  data/              Profile, experience, projects, education and photos
+  layouts/           Page shell and metadata
+  pages/             Routes and section order
+  scripts/           Photo viewer behaviour
+  styles/            Theme tokens and section styles
+  types/             Content contracts
+public/              Photographs, logos and résumé
+scripts/             Content validation
+```
 
-Keep TikTok marked incoming until the role starts; update the description only when there is completed work to describe. CSIT is intentionally abstracted, with the correct Python/FastMCP/SQLite stack. Do not publish the private architecture diagram. The removed F1 photograph is not included.
-
-## Vercel
-
-Push this directory as the root of its own GitHub repository. Import the repository into Vercel and select Astro. Build command: `npm run build`; output directory: `dist`. No environment variables are required. If importing the parent workspace instead, set the Root Directory to `portfolio`.
-
-Preview deployments can be reviewed before merging to the production branch. Connect a custom domain in Vercel when selected; then add the production `site` URL to `astro.config.mjs` and absolute canonical/social sharing URLs to the page head. No placeholder domain is configured.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the content model, styling conventions and deployment setup.
 
 ## Assets
 
-Personal photographs supplied by Ryan. Organisation logos sourced from their public websites; see `ASSET-SOURCES.json`. Branding does not imply endorsement. Font licenses are included in their Fontsource packages. Photos open in a keyboard-accessible viewer, with direct image links as a no-JavaScript fallback. Native details controls work without JavaScript.
+Personal photographs and résumé belong to Ryan Fan. Organisation marks belong to their respective owners and identify education and experience; their use does not imply endorsement. Sources are recorded in [ASSET-SOURCES.json](ASSET-SOURCES.json). Fonts retain the licenses supplied with their Fontsource packages.
 
-## Adding photos
-
-Put the image in `public/images/`, then add one entry to `src/data/photos.ts` with its path, caption, category, descriptive alt text and pixel dimensions. The horizontal photo journal and viewer include it automatically; no layout changes are needed. Landscape photos are shown in full so group photos do not lose people at the edges. Portrait thumbnails can set a focal point using `position`; the viewer always shows the full image.
+[GitHub](https://github.com/fanryan) · [LinkedIn](https://linkedin.com/in/fanryan)

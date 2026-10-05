@@ -1,0 +1,22 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  note?: string;
+  href?: string;
+}
+const { number, title, note, href } = Astro.props;
+---
+
+<div class="section-heading">
+  <span class="index">{number}</span>
+  <h2>{title}</h2>
+  {note &&
+    (href ? (
+      <a class="section-note text-link" href={href}>
+        {note}
+      </a>
+    ) : (
+      <span class="section-note">{note}</span>
+    ))}
+</div>

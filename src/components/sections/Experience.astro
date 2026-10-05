@@ -1,0 +1,52 @@
+---
+import { experience } from '../../data/experience';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Tags from '../ui/Tags.astro';
+import Disclosure from '../ui/Disclosure.astro';
+---
+
+<section id="experience" class="section">
+  <SectionHeading
+    number="01"
+    title="Experience"
+    note="Where I’ve been working"
+  />
+  <div class="experience-list">
+    {experience.map((job) => (
+      <article
+        class:list={['experience-row', { incoming: job.status === 'incoming' }]}
+      >
+        <div class="experience-meta">
+          <span class="date">{job.dates}</span>
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <img
+            class:list={['company-logo', job.logo]}
+            src={`/images/${job.logo}.png`}
+            alt={job.company}
+            loading="lazy"
+            width="160"
+            height="65"
+          />
+        </div>
+        <div class="experience-body">
+          <div class="role-heading">
+            <h3>{job.role}</h3>
+            {job.status === 'incoming' && <span class="badge">Incoming</span>}
+          </div>
+          <p class="sub-label">{job.label}</p>
+          <p>{job.summary}</p>
+          {job.details.length > 0 && (
+            <Disclosure label="More about my work">
+              <ul>
+                {job.details.map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+              <Tags items={job.stack} />
+            </Disclosure>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

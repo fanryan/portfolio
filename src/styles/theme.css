@@ -1,0 +1,31 @@
+/* Forest + sky. Edit this file to retheme the site.
+   Font packages are loaded once in BaseLayout.astro.
+   Component breakpoints live beside the layouts they change. */
+:root {
+  --forest: #234b3b;
+  --ink: #18221d;
+  --paper: #fcfcf8;
+  --sky: #b9d9ed;
+  --quiet: #526158;
+  --tint: #f0f3ed;
+  --focus: #2774a2;
+  --on-accent: #ffffff;
+  --on-accent-muted: #e0e8e2;
+  --on-accent-label: #dce7df;
+  --shadow-deep: #142f25;
+  --border: #bac4bc;
+  --border-muted: #bdc8c0;
+  --border-soft: #c9d1ca;
+  --border-tag: #bdc9c0;
+  --sage: #e4e9dd;
+  --dot-forest: #234b3b30;
+  --dot-sky: #b9d9ed50;
+  --shadow-soft: #18221d45;
+  --border-inverse: #ffffff40;
+  --backdrop: #101b16e8;
+  --font-body: 'DM Sans Variable', sans-serif;
+  --font-heading: 'Bricolage Grotesque Variable', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --width-page: 1280px;
+  --width-content: 1184px;
+}

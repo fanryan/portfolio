@@ -1,0 +1,14 @@
+---
+import { education } from '../../data/education';
+import SectionHeading from '../ui/SectionHeading.astro';
+import EducationCard from '../EducationCard.astro';
+---
+
+<section id="education" class="section">
+  <SectionHeading number="03" title="Education" />
+  <div class="school-grid">
+    {education.map((school) => (
+      <EducationCard school={school} />
+    ))}
+  </div>
+</section>

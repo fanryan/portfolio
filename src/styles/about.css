@@ -1,0 +1,28 @@
+.about-intro {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  margin-bottom: 30px;
+}
+.about-intro p {
+  font-size: 17px;
+}
+.about-intro p + p {
+  font-size: 14px;
+  color: var(--quiet);
+  align-self: center;
+}
+@media (max-width: 1000px) {
+  .about-intro {
+    gap: 35px;
+  }
+}
+@media (max-width: 740px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+  .about-intro p {
+    font-size: 16px;
+  }
+}

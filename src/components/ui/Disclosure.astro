@@ -1,0 +1,15 @@
+---
+interface Props {
+  label: string;
+  class?: string;
+}
+const { label, class: className } = Astro.props;
+---
+
+<details class={className}>
+  <summary>
+    {label}
+    <span aria-hidden="true">+</span>
+  </summary>
+  <slot />
+</details>

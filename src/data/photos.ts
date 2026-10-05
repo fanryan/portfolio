@@ -1,7 +1,33 @@
+import type { Photo } from '../types/content';
+
 // Add photos here; the gallery and full-photo viewer update automatically.
 // Keep source images in public/images. Use an accurate caption and descriptive alt text.
-export const photos = [
-  {src:'/images/photo1.jpg',caption:'Out for a hike',category:'Outdoors',alt:'Friends on a rocky summit surrounded by mountains and clouds',position:'50% 75%',width:733,height:1100},
-  {src:'/images/photo4.jpg',caption:'A photo break',category:'Travels',alt:'Two friends posing playfully in front of sunlit mountains',position:'50% 53%',width:619,height:1100},
-  {src:'/images/photo2.jpg',caption:'Raffles Hall floorball',category:'With the team',alt:'The Raffles Hall floorball team together on an indoor court',position:'50% 50%',width:1000,height:666},
+export const photos: Photo[] = [
+  {
+    src: '/images/photo1.jpg',
+    caption: 'Out for a hike',
+    category: 'Outdoors',
+    alt: 'Friends on a rocky summit surrounded by mountains and clouds',
+    position: '50% 75%',
+    width: 733,
+    height: 1100,
+  },
+  {
+    src: '/images/photo4.jpg',
+    caption: 'A photo break',
+    category: 'Travels',
+    alt: 'Two friends posing playfully in front of sunlit mountains',
+    position: '50% 53%',
+    width: 619,
+    height: 1100,
+  },
+  {
+    src: '/images/photo2.jpg',
+    caption: 'Raffles Hall floorball',
+    category: 'With the team',
+    alt: 'The Raffles Hall floorball team together on an indoor court',
+    position: '50% 50%',
+    width: 1000,
+    height: 666,
+  },
 ];

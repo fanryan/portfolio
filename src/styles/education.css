@@ -1,0 +1,136 @@
+.hall-heading {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 14px;
+}
+.hall-heading h3 {
+  margin: 6px 0 0;
+}
+.school-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.school-card {
+  border: 2px solid var(--ink);
+  padding: 28px;
+  background: var(--tint);
+  box-shadow:
+    0 6px 0 var(--sky),
+    0 8px 0 var(--ink);
+}
+.school-card:nth-child(2) {
+  background: var(--paper);
+}
+.school-brand {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.school-brand img {
+  max-height: 68px;
+  width: auto;
+  max-width: 230px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+.school-card h3 {
+  font-size: 27px;
+  margin: 12px 0;
+}
+.qualification {
+  font-size: 14px;
+  min-height: 48px;
+}
+.academic-result {
+  display: flex;
+  gap: 14px;
+  font: 11px var(--font-mono);
+  align-items: baseline;
+  margin: 12px 0 26px;
+}
+.academic-result dt {
+  color: var(--quiet);
+}
+.academic-result dd {
+  margin: 0;
+  border-bottom: 2px solid var(--sky);
+  padding-bottom: 5px;
+}
+.school-card h4 {
+  font-size: 12px;
+  margin: 0 0 12px;
+  font-weight: 650;
+}
+.school-awards {
+  font-size: 13px;
+  line-height: 1.7;
+  padding-left: 18px;
+  margin: 0 0 24px;
+  min-height: 68px;
+}
+.school-awards li + li {
+  margin-top: 9px;
+}
+.school-activities {
+  margin-top: 0;
+}
+.school-activities .hall-heading {
+  margin: 15px 0;
+}
+.school-activities .hall-crest {
+  width: 44px;
+  height: auto;
+  object-fit: contain;
+}
+.school-activities h4 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 21px;
+}
+.exchange {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  border-top: 1px solid var(--border-muted);
+  margin-top: 20px;
+  padding-top: 23px;
+}
+.exchange img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.exchange h4 {
+  font-size: 17px;
+  margin: 5px 0;
+}
+.exchange p:not(.date) {
+  font-size: 12px;
+  color: var(--quiet);
+}
+@media (max-width: 740px) {
+  .school-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .school-card {
+    padding: 24px;
+  }
+  .school-card h3 {
+    font-size: 25px;
+  }
+  .qualification {
+    min-height: 0;
+  }
+  .school-awards {
+    min-height: 0;
+  }
+  .school-brand {
+    margin-bottom: 15px;
+  }
+}

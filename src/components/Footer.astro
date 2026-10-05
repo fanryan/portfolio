@@ -1,0 +1,14 @@
+---
+import { site } from '../data/site';
+import ProfileLinks from './ui/ProfileLinks.astro';
+---
+
+<footer>
+  <span>
+    © {new Date().getFullYear()} {site.name}
+  </span>
+  <div>
+    <ProfileLinks />
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
