@@ -34,8 +34,7 @@ export const education: Education[] = [
       name: 'Aarhus University',
       logo: '/images/aarhus.png',
       dates: 'AUG — DEC 2026 · EXCHANGE',
-      description:
-        'Economics and Business Administration, bachelor’s level. Student Exchange Programme through NUS.',
+      description: 'Student Exchange Programme',
     },
   },
   {
