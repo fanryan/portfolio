@@ -38,7 +38,6 @@ export const hero = {
 export const about = {
   description:
     'Floorball, bouldering and time outdoors take up a fair bit of my week. I love travelling, and I’m often looking for somewhere new to explore.',
-  aside: 'On race weekends, I’m cheering for Leclerc and Ferrari.',
 };
 
 export const contact = {
