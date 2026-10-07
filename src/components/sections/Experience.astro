@@ -20,12 +20,12 @@ import Disclosure from '../ui/Disclosure.astro';
           <span class="date">{job.dates}</span>
           <span class="timeline-dot" aria-hidden="true"></span>
           <img
-            class:list={['company-logo', job.logo]}
+            class="company-logo"
             src={`/images/${job.logo}.png`}
             alt={job.company}
             loading="lazy"
             width="160"
-            height="65"
+            height="72"
           />
         </div>
         <div class="experience-body">

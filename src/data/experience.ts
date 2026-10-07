@@ -52,4 +52,16 @@ export const experience: Experience[] = [
     ],
     status: 'completed',
   },
+  {
+    company: 'NUS School of Computing',
+    logo: 'nus',
+    role: 'Undergraduate Teaching Assistant',
+    dates: 'AUG — DEC 2025',
+    label: 'BT1101 Introduction to Business Analytics',
+    summary:
+      'Taught machine learning concepts, statistical modelling and optimisation in R.',
+    details: [],
+    stack: [],
+    status: 'completed',
+  },
 ];

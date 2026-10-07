@@ -25,18 +25,12 @@
   border-radius: 50%;
 }
 .company-logo {
-  width: 125px;
-  height: 57px;
+  display: block;
+  width: 160px;
+  height: 72px;
   object-fit: contain;
   object-position: left center;
   margin-top: 17px;
-}
-.company-logo.csit {
-  width: 115px;
-  height: 64px;
-}
-.company-logo.secretlab {
-  width: 140px;
 }
 .role-heading {
   display: flex;
@@ -85,11 +79,10 @@
     order: 2;
     font-size: 9px;
   }
-  .company-logo,
-  .company-logo.csit,
-  .company-logo.secretlab {
-    height: 38px;
-    width: 110px;
+  .company-logo {
+    flex-shrink: 0;
+    height: 56px;
+    width: 140px;
     margin: 0;
   }
   .timeline-dot {
