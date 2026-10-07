@@ -47,7 +47,7 @@ export const education: Education[] = [
     },
     dates: '2016 — 2021',
     qualification: 'Singapore-Cambridge GCE Advanced Level',
-    result: { label: 'Rank points', value: '88.75' },
+    result: { label: 'Rank points', value: '88.75 / 90' },
     awards: ['Edusave Scholarship for Independent Schools'],
     activities: {
       items: [
