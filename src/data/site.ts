@@ -10,7 +10,6 @@ export const site = {
   email: 'fanryan03@gmail.com',
   github: 'https://github.com/fanryan',
   linkedin: 'https://linkedin.com/in/fanryan',
-  resume: { path: '/Fan_Ryan_Resume.pdf', filename: 'Fan_Ryan_Resume.pdf' },
   navigation: [
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },

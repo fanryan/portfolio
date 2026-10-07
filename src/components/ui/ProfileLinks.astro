@@ -2,23 +2,16 @@
 import { site } from '../../data/site';
 interface Props {
   class?: string;
-  resumeFirst?: boolean;
 }
-const { class: className, resumeFirst = false } = Astro.props;
-const resume = {
-  label: 'Résumé ↓',
-  href: site.resume.path,
-  download: site.resume.filename,
-};
-const socials = [
-  { label: 'GitHub ↗', href: site.github, download: undefined },
-  { label: 'LinkedIn ↗', href: site.linkedin, download: undefined },
+const { class: className } = Astro.props;
+const links = [
+  { label: 'GitHub ↗', href: site.github },
+  { label: 'LinkedIn ↗', href: site.linkedin },
 ];
-const links = resumeFirst ? [resume, ...socials] : [...socials, resume];
 ---
 
 {links.map((link) => (
-  <a class={className} href={link.href} download={link.download}>
+  <a class={className} href={link.href}>
     {link.label}
   </a>
 ))}

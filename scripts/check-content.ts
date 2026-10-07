@@ -28,8 +28,6 @@ function unique(values: string[], label: string) {
 external(site.github);
 external(site.linkedin);
 if (site.url) external(site.url);
-asset(site.resume.path);
-assert.equal(site.resume.path.split('/').at(-1), site.resume.filename);
 asset(hero.portrait.src);
 for (const job of experience) asset(`/images/${job.logo}.png`);
 unique(
