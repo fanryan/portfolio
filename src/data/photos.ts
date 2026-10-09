@@ -9,8 +9,8 @@ export const photos: Photo[] = [
     category: 'Outdoors',
     alt: 'Friends on a rocky summit surrounded by mountains and clouds',
     position: '50% 75%',
-    width: 733,
-    height: 1100,
+    width: 1090,
+    height: 1636,
   },
   {
     src: '/images/mddi-scholarship-ceremony-2026.png',
