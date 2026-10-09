@@ -23,7 +23,7 @@ export const photos: Photo[] = [
   },
   {
     src: '/images/photo2.jpg',
-    caption: 'Raffles Hall floorball',
+    caption: 'Raffles Hall Floorball',
     category: 'With the team',
     alt: 'The Raffles Hall floorball team together on an indoor court',
     position: '50% 50%',
