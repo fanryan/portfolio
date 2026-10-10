@@ -31,13 +31,6 @@ const { project } = Astro.props;
     {project.media && (
       <section class="project-media" aria-label={project.media.title}>
         <h2>{project.media.title}</h2>
-        {!project.preview && (
-          <p class="media-context">
-            Original design whiteboard · reviewed against source code on 10
-            October 2026. Read the implementation notes below alongside the
-            diagram.
-          </p>
-        )}
         <figure>
           <a
             href={project.media.src}

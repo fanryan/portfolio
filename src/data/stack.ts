@@ -33,12 +33,6 @@ export const stack = [
         mark: 'API',
       },
       {
-        name: 'Dart',
-        logo: '/images/tech/dart.svg',
-        color: true,
-        mark: 'API',
-      },
-      {
         name: 'R',
         logo: '/images/tech/r.svg',
         color: true,
@@ -58,12 +52,6 @@ export const stack = [
       {
         name: 'Node.js',
         logo: '/images/tech/nodejs.svg',
-        color: true,
-        mark: 'API',
-      },
-      {
-        name: 'Express',
-        logo: '/images/tech/express.svg',
         color: true,
         mark: 'API',
       },
@@ -97,7 +85,7 @@ export const stack = [
     title: 'Data Engineering',
     items: [
       {
-        name: 'Spark / PySpark',
+        name: 'Spark',
         logo: '/images/tech/apachespark.svg',
         color: true,
         mark: 'API',
@@ -134,12 +122,6 @@ export const stack = [
       {
         name: 'React Native',
         logo: '/images/tech/react.svg',
-        color: true,
-        mark: 'API',
-      },
-      {
-        name: 'Flutter',
-        logo: '/images/tech/flutter.svg',
         color: true,
         mark: 'API',
       },
