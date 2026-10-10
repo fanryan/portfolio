@@ -230,18 +230,22 @@
   }
   .reel-track figure,
   .reel-track figure:first-child {
-    flex-basis: 66vw;
+    flex-basis: auto;
+    width: min(78vw, 440px);
     scroll-snap-align: center;
   }
   .reel-track img {
-    height: 54vh;
-    max-height: 560px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    max-height: 58vh;
+    object-fit: cover;
   }
   .reel-track figure:nth-child(2) {
     transform: translateY(12px);
   }
   .reel-team img {
     object-fit: cover;
+    aspect-ratio: 3 / 4;
   }
   .reel-track figcaption {
     flex-direction: column;
