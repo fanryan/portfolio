@@ -9,6 +9,14 @@
   justify-content: space-between;
   padding: 28px 4vw;
   color: var(--paper);
+  background: rgba(18, 17, 15, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    padding-block 180ms ease,
+    box-shadow 180ms ease,
+    backdrop-filter 180ms ease;
 }
 .wordmark {
   text-decoration: none;
@@ -130,7 +138,9 @@ footer > div {
 }
 
 .header.scrolled {
-  background: #22221ff5;
+  background: rgba(18, 17, 15, 0.78);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
   padding-block: 16px;
   backdrop-filter: blur(12px);
 }

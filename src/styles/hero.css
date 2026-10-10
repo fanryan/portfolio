@@ -236,9 +236,12 @@
   }
   .reel-track img {
     height: auto;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
     max-height: 58vh;
     object-fit: cover;
+  }
+  .reel-track figure:first-child img {
+    aspect-ratio: 3 / 4;
   }
   .reel-track figure:nth-child(2) {
     transform: translateY(12px);
