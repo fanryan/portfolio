@@ -121,7 +121,7 @@
   font: 11px var(--font-mono);
 }
 .hero.enhanced {
-  height: 520vh;
+  height: 520svh;
   --mask: 0;
   --nameExit: 0;
   --intro: 0;
@@ -129,7 +129,7 @@
   --travel-x: 0px;
 }
 .enhanced .hero-stage {
-  height: 100vh;
+  height: 100svh;
   position: sticky;
   top: 0;
   overflow: hidden;
@@ -174,7 +174,7 @@
 .enhanced .introduction {
   position: absolute;
   inset: 0;
-  padding: 18vh 8vw;
+  padding: 18svh 8vw;
   opacity: var(--intro);
   transform: translateY(calc((1 - var(--intro)) * 30px));
   pointer-events: none;
@@ -182,7 +182,7 @@
 .enhanced .opening-reel {
   position: absolute;
   inset: 0;
-  padding-top: 9vh;
+  padding-top: 9svh;
   opacity: var(--reel);
   transform: translateY(calc((1 - var(--reel)) * 80px));
   pointer-events: none;
@@ -192,7 +192,7 @@
   transform: translateX(calc(-1 * var(--travel-x)));
 }
 .enhanced .reel-track img {
-  height: 61vh;
+  height: 61svh;
 }
 .enhanced .reel-next {
   pointer-events: auto;
@@ -205,7 +205,8 @@
   .arrival-photo {
     object-position: 57% 40%;
   }
-  .arrival h1 {
+  .arrival h1,
+  .name-window {
     font-size: clamp(100px, 24vw, 200px);
     top: auto;
     bottom: 100px;
@@ -242,5 +243,59 @@
   .reel-track figcaption {
     flex-direction: column;
     gap: 7px;
+  }
+}
+
+@media (max-width: 899px) {
+  .enhanced .introduction {
+    padding: 16svh 6vw 24px;
+  }
+  .enhanced .intro-statement {
+    font-size: clamp(36px, 9vw, 72px);
+    margin: 24px 0;
+  }
+  .enhanced .intro-description {
+    font-size: 16px;
+  }
+  .enhanced .opening-reel {
+    padding-top: max(90px, 12svh);
+  }
+  .enhanced .reel-track img {
+    height: 52svh;
+  }
+  .enhanced .reel-next {
+    margin-top: 24px;
+  }
+}
+@media (max-height: 500px) {
+  .enhanced .arrival h1,
+  .enhanced .name-window {
+    font-size: 100px;
+    top: auto;
+    bottom: 65px;
+    transform: none;
+  }
+  .enhanced .introduction {
+    padding: 75px 6vw 12px;
+  }
+  .enhanced .intro-statement {
+    font-size: 36px;
+    margin: 12px 0;
+  }
+  .enhanced .intro-description {
+    font-size: 14px;
+    margin-left: 0;
+  }
+  .enhanced .opening-reel {
+    padding-top: 75px;
+  }
+  .enhanced .reel-heading {
+    padding-bottom: 12px;
+  }
+  .enhanced .reel-track img {
+    height: 38svh;
+  }
+  .enhanced .reel-next {
+    margin-top: 12px;
   }
 }

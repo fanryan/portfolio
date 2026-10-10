@@ -1,10 +1,9 @@
 import { clamp, openingState } from './scene-math';
 const hero = document.querySelector<HTMLElement>('.hero');
-const media = window.matchMedia(
-  '(min-width: 900px) and (min-height: 650px) and (prefers-reduced-motion: no-preference)',
-);
+const media = window.matchMedia('(prefers-reduced-motion: no-preference)');
 if (hero) {
   let frame = 0;
+  const stage = hero.querySelector<HTMLElement>('.hero-stage')!;
   const track = hero.querySelector<HTMLElement>('.reel-track')!;
   const cue = hero.querySelector<HTMLAnchorElement>('.arrival-cue')!;
   const reelLink = hero.querySelector<HTMLAnchorElement>('.reel-next')!;
@@ -12,7 +11,9 @@ if (hero) {
     frame = 0;
     if (!media.matches) return;
     const bounds = hero.getBoundingClientRect();
-    const p = clamp(-bounds.top / (hero.offsetHeight - window.innerHeight));
+    const p = clamp(
+      -bounds.top / Math.max(1, hero.offsetHeight - stage.offsetHeight),
+    );
     const state = openingState(p);
     cue.inert = state.mask > 0.8;
     reelLink.inert = state.reel < 0.9;
