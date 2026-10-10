@@ -15,6 +15,7 @@ export interface Project {
   name: string;
   label: string;
   repository: string;
+  appUrl?: string;
   tone: 'sky' | 'forest' | 'sage';
   summary: string;
   details: string[];

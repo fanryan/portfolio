@@ -18,13 +18,9 @@ import Tags from '../ui/Tags.astro';
         {project.preview && project.media ? (
           <a
             class="project-screenshot"
-            href={
-              project.name === 'NUSpot'
-                ? project.repository
-                : `/projects/${project.name.toLowerCase()}/`
-            }
-            target={project.name === 'NUSpot' ? '_blank' : undefined}
-            rel={project.name === 'NUSpot' ? 'noopener noreferrer' : undefined}
+            href={project.appUrl ?? `/projects/${project.name.toLowerCase()}/`}
+            target={project.appUrl ? '_blank' : undefined}
+            rel={project.appUrl ? 'noopener noreferrer' : undefined}
             aria-label={`Explore ${project.name}`}
           >
             <img

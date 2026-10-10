@@ -70,7 +70,7 @@ const { project } = Astro.props;
     </ul>
     <a
       class="button"
-      href={project.repository}
+      href={project.appUrl ?? project.repository}
       target="_blank"
       rel="noopener noreferrer"
     >
