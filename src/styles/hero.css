@@ -228,10 +228,13 @@
     gap: 24px;
     scroll-snap-type: x mandatory;
   }
-  .reel-track figure,
-  .reel-track figure:first-child {
+  .reel-track figure {
     flex-basis: auto;
     width: min(78vw, 440px);
+    scroll-snap-align: center;
+  }
+  .reel-track figure:first-child {
+    width: min(54vw, 308px);
     scroll-snap-align: center;
   }
   .reel-track img {
