@@ -182,7 +182,7 @@
 .enhanced .opening-reel {
   position: absolute;
   inset: 0;
-  padding-top: 9svh;
+  padding-top: max(88px, 11svh);
   opacity: var(--reel);
   transform: translateY(calc((1 - var(--reel)) * 80px));
   pointer-events: none;
@@ -230,7 +230,7 @@
   }
   .reel-track figure,
   .reel-track figure:first-child {
-    flex-basis: 82vw;
+    flex-basis: 66vw;
     scroll-snap-align: center;
   }
   .reel-track img {
@@ -238,10 +238,10 @@
     max-height: 560px;
   }
   .reel-track figure:nth-child(2) {
-    transform: none;
+    transform: translateY(12px);
   }
   .reel-team img {
-    object-fit: contain;
+    object-fit: cover;
   }
   .reel-track figcaption {
     flex-direction: column;
