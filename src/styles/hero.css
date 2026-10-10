@@ -73,8 +73,8 @@
 }
 .intro-description {
   font-size: 18px;
-  max-width: 530px;
-  margin-left: 35%;
+  max-width: 50ch;
+  margin-left: 0;
 }
 .opening-reel {
   background: #252b25;
