@@ -13,7 +13,7 @@
     "PostgreSQL": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/postgresql.svg",
     "Redis": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/redis.svg",
     "Kafka": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apachekafka.svg",
-    "Airflow": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apacheairflow.svg",
+    "Airflow": "https://raw.githubusercontent.com/devicons/devicon/master/icons/apacheairflow/apacheairflow-original.svg",
     "Snowflake": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/snowflake.svg",
     "dbt": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/dbt.svg",
     "Pydantic": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/pydantic.svg",

@@ -35,7 +35,7 @@ export const photos: Photo[] = [
     caption: 'On court',
     category: 'Floorball',
     alt: 'Two floorball teammates high-fiving on court',
-    position: '50% 50%',
+    position: '50% 15%',
     width: 1280,
     height: 1919,
   },
