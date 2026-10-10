@@ -15,19 +15,36 @@ import Tags from '../ui/Tags.astro';
   <div class="project-grid">
     {projects.map((project, index) => (
       <article class="project" data-tone={project.tone}>
-        <div class="project-visual" aria-hidden="true">
-          <span class="project-number">
-            {String(index + 1).padStart(2, '0')} /
-          </span>
-          <div class="flow">
-            {project.flow.map((step, i) => (
-              <>
-                <span>{step}</span>
-                {i < project.flow.length - 1 && <b>↓</b>}
-              </>
-            ))}
+        {project.preview && project.media ? (
+          <a
+            class="project-screenshot"
+            href={`/projects/${project.name.toLowerCase()}/`}
+            aria-label={`Explore ${project.name}`}
+          >
+            <img
+              src={project.media.thumbnail}
+              alt={project.media.alt}
+              width={project.media.width}
+              height={project.media.height}
+              loading="lazy"
+            />
+            <span>Explore the app ↗</span>
+          </a>
+        ) : (
+          <div class="project-visual" aria-hidden="true">
+            <span class="project-number">
+              {String(index + 1).padStart(2, '0')} /
+            </span>
+            <div class="flow">
+              {project.flow.map((step, i) => (
+                <>
+                  <span>{step}</span>
+                  {i < project.flow.length - 1 && <b>↓</b>}
+                </>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
         <div class="project-content">
           <p class="eyebrow">{project.label}</p>
           <h3>{project.name}</h3>

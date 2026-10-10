@@ -20,6 +20,16 @@ export interface Project {
   details: string[];
   stack: string[];
   flow: string[];
+  media?: {
+    src: string;
+    thumbnail: string;
+    alt: string;
+    title: string;
+    width: number;
+    height: number;
+    notes: string[];
+  };
+  preview?: boolean;
 }
 
 export interface Photo {

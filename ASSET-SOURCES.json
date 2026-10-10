@@ -30,5 +30,6 @@
     "DSPy": "https://raw.githubusercontent.com/stanfordnlp/dspy/main/docs/docs/static/dspy-logo.svg",
     "ChromaDB": "https://www.trychroma.com/_next/static/immutable/media/chroma-wordmark.3omc55d6a9e1l.svg"
   },
-  "editorial": "Personal photographs supplied by Ryan Fan; resized and compressed for the web."
+  "editorial": "Personal photographs supplied by Ryan Fan; resized and compressed for the web.",
+  "projects": "System-design whiteboards and NUSpot screenshot supplied by Ryan Fan on 10 October 2026. Compressed previews link to unmodified full-size originals; implementation caveats accompany the whiteboards."
 }
