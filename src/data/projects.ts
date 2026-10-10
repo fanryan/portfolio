@@ -82,7 +82,7 @@ export const projects: Project[] = [
     ],
     stack: ['Vue', 'Firebase', 'GitHub Actions', 'Leaflet', 'OpenAI API'],
     flow: ['Discover', 'Organise', 'Join'],
-    repository: 'https://nuspot-6da9f.web.app/',
+    repository: 'https://github.com/fanryan/NUSpot',
     tone: 'sage',
   },
 ];

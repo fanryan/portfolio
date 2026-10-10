@@ -3,14 +3,14 @@ export const stack = [
     title: 'Languages',
     items: [
       {
-        name: 'Java',
-        logo: '/images/tech/java.svg',
+        name: 'Go',
+        logo: '/images/tech/go.svg',
         color: true,
         mark: 'API',
       },
       {
-        name: 'Go',
-        logo: '/images/tech/go.svg',
+        name: 'Java',
+        logo: '/images/tech/java.svg',
         color: true,
         mark: 'API',
       },
@@ -50,20 +50,8 @@ export const stack = [
         mark: 'API',
       },
       {
-        name: 'Node.js',
-        logo: '/images/tech/nodejs.svg',
-        color: true,
-        mark: 'API',
-      },
-      {
         name: 'PostgreSQL',
         logo: '/images/tech/postgresql.svg',
-        color: true,
-        mark: 'API',
-      },
-      {
-        name: 'MongoDB',
-        logo: '/images/tech/mongodb.svg',
         color: true,
         mark: 'API',
       },
@@ -76,6 +64,18 @@ export const stack = [
       {
         name: 'Kafka',
         logo: '/images/tech/apachekafka.svg',
+        color: true,
+        mark: 'API',
+      },
+      {
+        name: 'Node.js',
+        logo: '/images/tech/nodejs.svg',
+        color: true,
+        mark: 'API',
+      },
+      {
+        name: 'MongoDB',
+        logo: '/images/tech/mongodb.svg',
         color: true,
         mark: 'API',
       },

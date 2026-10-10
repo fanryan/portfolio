@@ -44,7 +44,7 @@ export const photos: Photo[] = [
     caption: 'Run for Hope 2024',
     category: 'Outside',
     alt: 'Friends posing together at Run for Hope 2024',
-    position: '50% 50%',
+    position: '50% 64%',
     width: 1280,
     height: 960,
   },

@@ -7,16 +7,6 @@ import EducationCard from '../EducationCard.astro';
 <section id="education" class="section">
   <SectionHeading number="02" title="Education" />
   <div class="education-spread">
-    <figure class="education-photo">
-      <img
-        src="/images/editorial/committee.webp"
-        alt="Raffles Hall Sports Management Committee together"
-        width="1600"
-        height="1067"
-        loading="lazy"
-      />
-      <figcaption>RAFFLES HALL / SPORTS MANAGEMENT COMMITTEE</figcaption>
-    </figure>
     <div class="school-grid">
       {education.map((school) => (
         <EducationCard school={school} />

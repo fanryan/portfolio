@@ -4,35 +4,29 @@
 }
 .education-spread {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: 1fr;
   align-items: start;
-  gap: 7vw;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.education-photo {
-  position: sticky;
-  top: 110px;
-  padding-top: 10px;
-}
-.education-photo img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-.education-photo figcaption {
-  font: 10px/1.7 var(--font-mono);
+.school-grid {
+  display: grid;
+  gap: 18px;
 }
 .school-card {
-  padding: 0 0 48px;
+  padding: 0 0 52px;
 }
 .school-card + .school-card {
   border-top: 1px solid var(--border);
-  padding-top: 45px;
+  padding-top: 42px;
+  margin-top: 8px;
 }
 .school-brand {
   height: 70px;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 .school-brand img {
   width: 180px;
@@ -42,7 +36,7 @@
 }
 .school-card h3 {
   margin: 15px 0;
-  font-size: 32px;
+  font-size: clamp(28px, 3vw, 32px);
 }
 .qualification {
   font-size: 16px;
@@ -104,10 +98,7 @@ h4 {
 @media (max-width: 900px) {
   .education-spread {
     grid-template-columns: 1fr;
-    gap: 45px;
-  }
-  .education-photo {
-    position: static;
+    gap: 0;
   }
 
   .school-card h3 {

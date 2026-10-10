@@ -88,10 +88,10 @@ photo-journal {
   object-fit: cover;
 }
 .journal-photo.landscape img {
-  object-fit: contain;
+  object-fit: cover;
   background: var(--tint);
-  height: auto;
-  aspect-ratio: 3/2;
+  height: 340px;
+  aspect-ratio: auto;
 }
 .photo-open {
   position: absolute;

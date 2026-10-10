@@ -68,7 +68,12 @@ const { project } = Astro.props;
         <li>{detail}</li>
       ))}
     </ul>
-    <a class="button" href={project.repository}>
+    <a
+      class="button"
+      href={project.repository}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {project.name === 'NUSpot' ? 'Explore the app ↗' : 'Explore the code ↗'}
     </a>
   </article>
