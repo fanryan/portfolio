@@ -23,7 +23,7 @@ export const photos: Photo[] = [
   },
   {
     src: '/images/editorial/mirror.webp',
-    caption: 'A stop along the way',
+    caption: 'Taiwan trip with RHAG Floaters',
     category: 'With friends',
     alt: 'Friends reflected in a roadside mirror',
     position: '50% 50%',
