@@ -240,6 +240,9 @@
   .reel-track figure:nth-child(2) {
     transform: none;
   }
+  .reel-team img {
+    object-fit: contain;
+  }
   .reel-track figcaption {
     flex-direction: column;
     gap: 7px;
