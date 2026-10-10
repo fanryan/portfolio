@@ -235,20 +235,15 @@
     scroll-snap-align: center;
   }
   .reel-track img {
+    display: block;
+    width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
     max-height: 58vh;
-    object-fit: cover;
-  }
-  .reel-track figure:first-child img {
-    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    object-position: center;
   }
   .reel-track figure:nth-child(2) {
     transform: translateY(12px);
-  }
-  .reel-team img {
-    object-fit: cover;
-    aspect-ratio: 3 / 4;
   }
   .reel-track figcaption {
     flex-direction: column;
@@ -271,7 +266,10 @@
     padding-top: max(90px, 12svh);
   }
   .enhanced .reel-track img {
-    height: 52svh;
+    height: auto;
+    max-height: 52svh;
+    width: 100%;
+    object-fit: contain;
   }
   .enhanced .reel-next {
     margin-top: 24px;

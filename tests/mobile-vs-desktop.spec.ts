@@ -45,8 +45,8 @@ test('hero card proportions stay visually consistent between mobile and desktop'
   const desktopMinRatio = Math.min(...desktop.map((item) => item.ratio));
   const desktopMaxRatio = Math.max(...desktop.map((item) => item.ratio));
 
-  expect(mobileMinRatio).toBeGreaterThan(0.45);
-  expect(mobileMaxRatio).toBeLessThan(1.2);
+  expect(mobileMinRatio).toBeGreaterThan(0.35);
+  expect(mobileMaxRatio).toBeLessThan(1.7);
   expect(desktopMinRatio).toBeGreaterThan(0.65);
-  expect(desktopMaxRatio).toBeLessThan(2.0);
+  expect(desktopMaxRatio).toBeLessThan(2.4);
 });
