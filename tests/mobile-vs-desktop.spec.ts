@@ -1,25 +1,39 @@
 import { expect, test } from '@playwright/test';
 
-async function readHeroFigureRatios(page: any, width: number, height: number) {
+type HeroFigureMetrics = {
+  width: number;
+  height: number;
+  ratio: number;
+};
+
+async function readHeroFigureRatios(
+  page: any,
+  width: number,
+  height: number,
+): Promise<HeroFigureMetrics[]> {
   await page.setViewportSize({ width, height });
   await page.goto('/');
   await page.waitForLoadState('networkidle');
   await page.locator('.opening-reel').scrollIntoViewIfNeeded();
 
-  return page.locator('.reel-track figure').evaluateAll((figures) =>
-    figures.map((figure) => {
-      const rect = figure.getBoundingClientRect();
-      const ratio = rect.width / rect.height;
-      return {
-        width: rect.width,
-        height: rect.height,
-        ratio,
-      };
-    }),
-  );
+  return page
+    .locator('.reel-track figure')
+    .evaluateAll((figures: HTMLElement[]) =>
+      figures.map((figure: HTMLElement) => {
+        const rect = figure.getBoundingClientRect();
+        const ratio = rect.width / rect.height;
+        return {
+          width: rect.width,
+          height: rect.height,
+          ratio,
+        } satisfies HeroFigureMetrics;
+      }),
+    );
 }
 
-test('hero card proportions stay visually consistent between mobile and desktop', async ({ page }) => {
+test('hero card proportions stay visually consistent between mobile and desktop', async ({
+  page,
+}) => {
   const mobile = await readHeroFigureRatios(page, 390, 844);
   const desktop = await readHeroFigureRatios(page, 1440, 900);
 
