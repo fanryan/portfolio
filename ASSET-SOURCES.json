@@ -28,7 +28,21 @@
     "Java": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
     "FastMCP": "https://raw.githubusercontent.com/jlowin/fastmcp/main/docs/assets/brand/favicon-dark.svg",
     "DSPy": "https://raw.githubusercontent.com/stanfordnlp/dspy/main/docs/docs/static/dspy-logo.svg",
-    "ChromaDB": "https://www.trychroma.com/_next/static/immutable/media/chroma-wordmark.3omc55d6a9e1l.svg"
+    "ChromaDB": "https://www.trychroma.com/_next/static/immutable/media/chroma-wordmark.3omc55d6a9e1l.svg",
+    "javascript": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    "dart": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg",
+    "r": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg",
+    "nodejs": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    "express": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+    "mongodb": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    "vuejs": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
+    "react": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    "flutter": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
+    "firebase": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
+    "apachespark": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg",
+    "langchain": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/langchain.svg",
+    "langgraph": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/langgraph.svg",
+    "openai": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg"
   },
   "editorial": "Personal photographs supplied by Ryan Fan; resized and compressed for the web.",
   "projects": "System-design whiteboards and NUSpot screenshot supplied by Ryan Fan on 10 October 2026. Compressed previews link to unmodified full-size originals; implementation caveats accompany the whiteboards."

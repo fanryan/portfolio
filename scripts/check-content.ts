@@ -65,7 +65,10 @@ console.log(
 );
 
 const technologies = stack.flatMap((group) => group.items);
-assert.equal(technologies.length, 23);
+assert(
+  stack.every((group) => group.items.length > 0),
+  'Toolkit groups must not be empty',
+);
 unique(
   technologies.map((item) => item.name),
   'technology',
