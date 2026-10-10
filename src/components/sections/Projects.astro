@@ -3,12 +3,11 @@ import { projects } from '../../data/projects';
 import { site } from '../../data/site';
 import SectionHeading from '../ui/SectionHeading.astro';
 import Tags from '../ui/Tags.astro';
-import Disclosure from '../ui/Disclosure.astro';
 ---
 
 <section id="projects" class="section">
   <SectionHeading
-    number="02"
+    number="03"
     title="Projects"
     note="All repositories ↗"
     href={site.github}
@@ -34,13 +33,12 @@ import Disclosure from '../ui/Disclosure.astro';
           <h3>{project.name}</h3>
           <p>{project.summary}</p>
           <Tags items={project.stack} />
-          <Disclosure label="What I worked on">
-            <ul>
-              {project.details.map((detail) => (
-                <li>{detail}</li>
-              ))}
-            </ul>
-          </Disclosure>
+          <a
+            class="project-detail-link"
+            href={`/projects/${project.name.toLowerCase()}/`}
+          >
+            Explore the project <span aria-hidden="true">↗</span>
+          </a>
           <a class="repo-link" href={project.repository}>
             View GitHub <span aria-hidden="true">↗</span>
           </a>

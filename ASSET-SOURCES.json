@@ -5,5 +5,30 @@
   "tiktok": "https://www.tiktok.com/about",
   "hci": "https://www.hci.edu.sg/",
   "aarhus": "https://international.au.dk/",
-  "raffles-hall": "Crest supplied by Ryan Fan"
+  "raffles-hall": "Crest supplied by Ryan Fan",
+  "technology": {
+    "Go": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/go.svg",
+    "Python": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/python.svg",
+    "Spring Boot": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/springboot.svg",
+    "PostgreSQL": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/postgresql.svg",
+    "Redis": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/redis.svg",
+    "Kafka": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apachekafka.svg",
+    "Airflow": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apacheairflow.svg",
+    "Snowflake": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/snowflake.svg",
+    "dbt": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/dbt.svg",
+    "Pydantic": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/pydantic.svg",
+    "Docker": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docker.svg",
+    "AWS": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonwebservices.svg",
+    "GitHub Actions": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/githubactions.svg",
+    "Testcontainers": "https://raw.githubusercontent.com/testcontainers/testcontainers-java/main/docs/logo.svg",
+    "JUnit": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/junit5.svg",
+    "pytest": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/pytest.svg",
+    "Prometheus": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/prometheus.svg",
+    "Terraform": "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/terraform.svg",
+    "Java": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    "FastMCP": "https://raw.githubusercontent.com/jlowin/fastmcp/main/docs/assets/brand/favicon-dark.svg",
+    "DSPy": "https://raw.githubusercontent.com/stanfordnlp/dspy/main/docs/docs/static/dspy-logo.svg",
+    "ChromaDB": "https://www.trychroma.com/_next/static/immutable/media/chroma-wordmark.3omc55d6a9e1l.svg"
+  },
+  "editorial": "Personal photographs supplied by Ryan Fan; resized and compressed for the web."
 }

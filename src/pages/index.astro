@@ -4,17 +4,17 @@ import Hero from '../components/sections/Hero.astro';
 import Experience from '../components/sections/Experience.astro';
 import Projects from '../components/sections/Projects.astro';
 import Education from '../components/sections/Education.astro';
+import TechStack from '../components/sections/TechStack.astro';
 import About from '../components/sections/About.astro';
 import Contact from '../components/sections/Contact.astro';
 ---
 
 <BaseLayout>
   <Hero />
-  <div class="page-content">
-    <Experience />
-    <Projects />
-    <Education />
-    <About />
-  </div>
+  <Experience />
+  <Education />
+  <Projects />
+  <TechStack />
+  <About />
   <Contact />
 </BaseLayout>

@@ -1,141 +1,136 @@
-.header,
-footer {
-  max-width: var(--width-page);
-  margin: auto;
-  padding: 25px 48px;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  justify-content: space-between;
+  padding: 28px 4vw;
+  color: var(--paper);
 }
 .wordmark {
-  font-size: 25px;
-  font-weight: 800;
   text-decoration: none;
-  letter-spacing: -1px;
+  font-size: 26px;
+  line-height: 0.84;
+  font-weight: 850;
+  letter-spacing: -0.08em;
 }
-.wordmark span {
-  color: var(--forest);
-}
-nav {
+.desktop-nav {
   display: flex;
-  gap: 30px;
   align-items: center;
-  font-size: 14px;
-  font-weight: 600;
+  gap: 27px;
 }
-nav a {
+.desktop-nav a {
   text-decoration: none;
+  font-size: 12px;
 }
-nav a:hover {
+.desktop-nav a:hover {
   text-decoration: underline;
 }
 .nav-contact {
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 5px;
+  border: 1px solid #ffffff80;
+  border-radius: 40px;
+  padding: 13px 19px;
+  margin-left: 15px;
 }
-.nav-contact span {
-  margin-left: 12px;
+.mobile-menu {
+  display: none;
 }
 .skip {
-  position: absolute;
+  position: fixed;
   top: -100px;
-  background: var(--sky);
+  left: 20px;
+  background: var(--paper);
+  color: var(--ink);
   padding: 16px;
-  z-index: 5;
+  z-index: 99;
 }
 .skip:focus {
-  top: 10px;
+  top: 15px;
+}
+footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 28px 6vw;
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  font-size: 12px;
+  border-top: 1px solid #ffffff30;
+}
+footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
 }
 .contact {
-  max-width: var(--width-page);
-  margin: 100px auto 0;
-  background: var(--forest);
+  padding: 100px 6vw;
+  background: var(--ink);
   color: var(--paper);
-  border: 2px solid var(--ink);
-  border-top: 8px solid var(--sky);
-  padding: 50px 65px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 45px;
-}
-.contact .eyebrow {
-  color: var(--sky);
+  gap: 50px;
+  align-items: end;
 }
 .contact h2 {
-  font-size: 65px;
-  margin: 13px 0 17px;
+  font-size: clamp(70px, 13vw, 190px);
+  margin: 20px 0 35px;
 }
 .contact p:not(.eyebrow) {
-  font-size: 14px;
-  max-width: 510px;
-  color: var(--on-accent-muted);
+  max-width: 500px;
+  color: #ceccc6;
 }
 .contact .button {
   flex-shrink: 0;
 }
-footer {
-  font-size: 11px;
-  padding-top: 28px;
-  padding-bottom: 30px;
-  color: var(--quiet);
-}
-footer > div {
-  display: flex;
-  gap: 25px;
-}
-footer a {
-  text-decoration: none;
-}
-@media (max-width: 1000px) {
-  .header,
-  footer {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-@media (max-width: 740px) {
-  .header {
-    padding: 20px;
-  }
-  .wordmark {
-    font-size: 23px;
-  }
-  nav {
-    gap: 16px;
-    font-size: 12px;
-  }
-  .nav-contact {
+@media (max-width: 900px) {
+  .desktop-nav {
     display: none;
   }
-  .contact {
-    margin-top: 65px;
-    padding: 35px 25px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 25px;
+  .header {
+    padding: 24px;
   }
-  .contact h2 {
-    font-size: 54px;
+  .mobile-menu {
+    display: block;
+    margin: 0;
+    position: relative;
+  }
+  .mobile-menu summary {
+    border: 1px solid #ffffff70;
+    padding: 8px 15px;
+    border-radius: 30px;
+  }
+  .mobile-menu nav {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    min-width: 220px;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px #0003;
+  }
+  .mobile-menu nav a {
+    display: block;
+    padding: 10px 12px;
+    text-decoration: none;
+  }
+  .contact {
+    flex-direction: column;
+    align-items: start;
+    padding: 75px 24px;
   }
   footer {
-    padding: 25px 22px;
-    gap: 20px;
+    padding: 28px 24px;
     flex-wrap: wrap;
   }
-  footer > div {
-    gap: 20px;
-  }
 }
-@media (max-width: 380px) {
-  nav {
-    gap: 11px;
-  }
-  .header {
-    padding: 17px;
-  }
-}
-footer > div {
-  flex-wrap: wrap;
+
+.header.scrolled {
+  background: #22221ff5;
+  padding-block: 16px;
+  backdrop-filter: blur(12px);
 }

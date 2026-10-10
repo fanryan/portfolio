@@ -3,10 +3,8 @@ photo-journal {
 }
 
 .journal {
-  border-top: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
-  background: var(--tint);
-  padding: 0 22px 14px;
+  border-top: 1px solid var(--border);
+  padding: 0 0 14px;
 }
 .journal-bar {
   display: flex;
@@ -36,7 +34,7 @@ photo-journal {
   color: var(--ink);
   border: 1px solid var(--ink);
   padding: 8px 13px;
-  box-shadow: 2px 2px 0 var(--ink);
+  border-radius: 30px;
 }
 .journal-controls button:disabled {
   opacity: 0.35;
@@ -61,16 +59,13 @@ photo-journal {
 .journal-photo {
   flex: 0 0 36%;
   min-width: 250px;
-  border: 2px solid var(--ink);
-  padding: 8px 8px 0;
+  padding: 0;
   background: var(--paper);
-  box-shadow:
-    0 6px 0 var(--sky),
-    0 8px 0 var(--ink);
+
   scroll-snap-align: start;
 }
 .journal-photo:nth-child(2n) {
-  margin-top: 24px;
+  margin-top: 70px;
 }
 .journal-photo.landscape {
   flex-basis: 57%;
@@ -128,7 +123,6 @@ photo-journal {
   border: 2px solid var(--ink);
   background: var(--paper);
   color: var(--ink);
-  box-shadow: 8px 8px 0 var(--forest);
 }
 .photo-dialog::backdrop {
   background: var(--backdrop);
@@ -186,7 +180,6 @@ photo-journal {
   }
   .photo-dialog {
     padding: 12px;
-    box-shadow: 4px 4px 0 var(--forest);
   }
   .viewer-bottom {
     gap: 12px;

@@ -1,35 +1,101 @@
 ---
-import { site, hero } from '../../data/site';
-import ProfileLinks from '../ui/ProfileLinks.astro';
+import { hero } from '../../data/site';
 ---
 
 <section class="hero" id="home" aria-labelledby="intro-title">
-  <div class="hero-copy">
-    <p class="eyebrow">{hero.eyebrow}</p>
-    <p class="hello">{hero.greeting}</p>
-    <h1 id="intro-title">
-      {site.name}
-      <span>.</span>
-    </h1>
-    <p class="intro">{hero.intro}</p>
-    <p class="hero-description">{hero.description}</p>
-    <div class="hero-links">
-      <a class="button sky" href="#experience">
-        Explore my work <span aria-hidden="true">↓</span>
+  <div class="hero-stage">
+    <div class="arrival">
+      <img
+        class="arrival-photo"
+        src="/images/editorial/portrait.webp"
+        alt="Ryan in a white shirt outside an arched entrance"
+        width="1800"
+        height="2400"
+        fetchpriority="high"
+      />
+      <div class="arrival-shade"></div>
+      <div class="arrival-caption">
+        <span>RYAN FAN / SOFTWARE ENGINEERING</span>
+        <span>Singapore · NUS</span>
+      </div>
+      <h1 id="intro-title">
+        RYAN
+        <br />
+        FAN.
+      </h1>
+      <div class="name-window" aria-hidden="true">
+        RYAN
+        <br />
+        FAN.
+      </div>
+      <a class="arrival-cue" href="#experience">
+        SCROLL TO EXPLORE <span>↓</span>
       </a>
-      <ProfileLinks class="text-link" />
+    </div>
+    <div class="introduction">
+      <p class="eyebrow">A LITTLE ABOUT ME</p>
+      <p class="intro-statement">
+        Building software.
+        <br />
+        <span>Finding my way.</span>
+      </p>
+      <p class="intro-description">
+        {hero.intro} My work spans backend systems, data infrastructure and AI
+        tooling.
+      </p>
+    </div>
+    <div class="opening-reel">
+      <div class="reel-heading">
+        <span>AWAY FROM THE LAPTOP</span>
+        <span>A few things that make me, me.</span>
+      </div>
+      <div class="reel-track">
+        <figure>
+          <img
+            src="/images/editorial/ferrari.webp"
+            alt="Friends in Ferrari shirts among a crowd of racing fans"
+            width="892"
+            height="1189"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>01 / RACE DAYS</span>
+            <span>Worth losing my voice for.</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/images/editorial/mountains.webp"
+            alt="A hiker looking toward mist-covered mountains"
+            width="1600"
+            height="900"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>02 / TAKING THE LONG WAY</span>
+            <span>A little further from a screen.</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/images/editorial/team.webp"
+            alt="The floorball team celebrating together on court"
+            width="1600"
+            height="1067"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>03 / WITH THE TEAM</span>
+            <span>See you on court.</span>
+          </figcaption>
+        </figure>
+      </div>
+      <a class="reel-next" href="#experience">
+        BACK TO WHAT I BUILD ↘
+      </a>
     </div>
   </div>
-  <figure class="portrait">
-    <img {...hero.portrait} fetchpriority="high" />
-    <figcaption>
-      <span>{site.name.toUpperCase()}</span>
-      <span>{hero.caption}</span>
-    </figcaption>
-  </figure>
-  <div class="hero-bottom">
-    {hero.interests.map((interest) => (
-      <span>{interest}</span>
-    ))}
-  </div>
 </section>
+<script>
+  import '../../scripts/scroll-scenes';
+</script>

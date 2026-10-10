@@ -1,0 +1,43 @@
+---
+import { stack } from '../../data/stack';
+import SectionHeading from '../ui/SectionHeading.astro';
+---
+
+<section class="section toolkit" id="stack">
+  <SectionHeading
+    number="04"
+    title="My toolkit"
+    note="Languages, systems & tools"
+  />
+  <p class="section-lead">The tools I work with.</p>
+  <div class="stack-groups">
+    {stack.map((group, index) => (
+      <div class="stack-group">
+        <h3>
+          <span class="eyebrow">0{index + 1}</span>
+          {group.title}
+        </h3>
+        <ul class="stack-items">
+          {group.items.map((item) => (
+            <li>
+              <span class:list={['stack-icon', { color: item.color }]}>
+                {item.logo ? (
+                  <img
+                    src={item.logo}
+                    alt=""
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
+                ) : (
+                  <b aria-hidden="true">SQL</b>
+                )}
+              </span>
+              <span>{item.name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

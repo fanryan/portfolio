@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+import Tags from '../../components/ui/Tags.astro';
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.name.toLowerCase() },
+    props: { project },
+  }));
+}
+const { project } = Astro.props;
+---
+
+<BaseLayout title={`${project.name} — Ryan Fan`} description={project.summary}>
+  <article class="project-page section">
+    <a class="back-link" href="/#projects">
+      ← All projects
+    </a>
+    <p class="eyebrow">{project.label}</p>
+    <h1>{project.name}</h1>
+    <p class="project-page-intro">{project.summary}</p>
+    <Tags items={project.stack} />
+    <div class="project-page-flow" aria-label="Workflow">
+      {project.flow.map((step, index) => (
+        <span>
+          <small>0{index + 1}</small>
+          {step}
+        </span>
+      ))}
+    </div>
+    <h2>What I worked on</h2>
+    <ul class="project-contributions">
+      {project.details.map((detail) => (
+        <li>{detail}</li>
+      ))}
+    </ul>
+    <a class="button" href={project.repository}>
+      Explore the code ↗
+    </a>
+  </article>
+</BaseLayout>

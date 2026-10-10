@@ -17,6 +17,7 @@ jobs:
       - run: npm ci
       - run: npm run format:check
       - run: npm run test:content
+      - run: npm run test:motion
       - run: npm run build
         env:
           ASTRO_TELEMETRY_DISABLED: '1'

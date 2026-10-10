@@ -1,3 +1,4 @@
+import { stack } from '../src/data/stack.ts';
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
 import { resolve, sep } from 'node:path';
@@ -62,3 +63,15 @@ for (const photo of photos) {
 console.log(
   `Content checks passed: ${experience.length} roles, ${projects.length} projects, ${education.length} schools, ${photos.length} photos.`,
 );
+
+const technologies = stack.flatMap((group) => group.items);
+assert.equal(technologies.length, 23);
+unique(
+  technologies.map((item) => item.name),
+  'technology',
+);
+assert(technologies.some((item) => item.name === 'Terraform'));
+for (const item of technologies) if (item.logo) asset(item.logo);
+for (const name of ['portrait', 'ferrari', 'mountains', 'team', 'committee'])
+  asset(`/images/editorial/${name}.webp`);
+console.log('Toolkit and opening asset checks passed.');

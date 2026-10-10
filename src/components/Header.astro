@@ -1,18 +1,50 @@
 ---
-import { site } from '../data/site';
+const links = [
+  { label: 'Work', href: '/#experience' },
+  { label: 'Education', href: '/#education' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Toolkit', href: '/#stack' },
+  { label: 'Life', href: '/#about' },
+];
 ---
 
 <header class="header">
-  <a class="wordmark" href="#home">
-    {site.name}
-    <span>.</span>
+  <a class="wordmark" href="/#home" aria-label="Ryan Fan, home">
+    RYAN
+    <br />
+    FAN<span>.</span>
   </a>
-  <nav aria-label="Main navigation">
-    {site.navigation.map((link) => (
+  <nav class="desktop-nav" aria-label="Main navigation">
+    {links.map((link) => (
       <a href={link.href}>{link.label}</a>
     ))}
-    <a class="nav-contact" href={`mailto:${site.email}`}>
-      Say hello <span aria-hidden="true">↗</span>
+    <a class="nav-contact" href="/#contact">
+      LET’S TALK ↗
     </a>
   </nav>
+  <details class="mobile-menu">
+    <summary>
+      Menu <span>+</span>
+    </summary>
+    <nav aria-label="Mobile navigation">
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+      <a href="/#contact">Let’s talk ↗</a>
+    </nav>
+  </details>
 </header>
+<script>
+  const header = document.querySelector('.header');
+  const updateHeader = () =>
+    header?.classList.toggle('scrolled', window.scrollY > 80);
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+  document
+    .querySelectorAll('.mobile-menu a')
+    .forEach((link) =>
+      link.addEventListener('click', () =>
+        document.querySelector('.mobile-menu')?.removeAttribute('open'),
+      ),
+    );
+</script>
