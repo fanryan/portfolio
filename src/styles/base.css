@@ -39,6 +39,12 @@ button {
   font: inherit;
   cursor: pointer;
 }
+.text-arrow {
+  display: inline-block;
+  font-family: 'SF Pro Text', 'Segoe UI Symbol', 'Apple Symbols', sans-serif;
+  font-variant-emoji: none;
+  transform: translateY(-0.04em);
+}
 p,
 li {
   line-height: 1.75;

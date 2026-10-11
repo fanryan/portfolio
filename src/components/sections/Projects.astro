@@ -30,7 +30,12 @@ import Tags from '../ui/Tags.astro';
               height={project.media.height}
               loading="lazy"
             />
-            <span>Explore the app ↗</span>
+            <span>
+              Explore the app{' '}
+              <span class="text-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </span>
           </a>
         ) : (
           <div class="project-visual" aria-hidden="true">
@@ -56,7 +61,10 @@ import Tags from '../ui/Tags.astro';
             class="project-detail-link"
             href={`/projects/${project.name.toLowerCase()}/`}
           >
-            Explore the project <span aria-hidden="true">↗</span>
+            Explore the project{' '}
+            <span class="text-arrow" aria-hidden="true">
+              ↗
+            </span>
           </a>
           <a
             class="repo-link"
@@ -64,7 +72,10 @@ import Tags from '../ui/Tags.astro';
             target="_blank"
             rel="noopener noreferrer"
           >
-            View GitHub <span aria-hidden="true">↗</span>
+            View GitHub{' '}
+            <span class="text-arrow" aria-hidden="true">
+              ↗
+            </span>
           </a>
         </div>
       </article>

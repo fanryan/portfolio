@@ -5,13 +5,21 @@ interface Props {
 }
 const { class: className } = Astro.props;
 const links = [
-  { label: 'GitHub ↗', href: site.github },
-  { label: 'LinkedIn ↗', href: site.linkedin },
+  { label: 'GitHub', href: site.github },
+  { label: 'LinkedIn', href: site.linkedin },
 ];
 ---
 
 {links.map((link) => (
-  <a class={className} href={link.href}>
+  <a
+    class={className}
+    href={link.href}
+    target={link.href.startsWith('http') ? '_blank' : undefined}
+    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+  >
     {link.label}
+    <span class="text-arrow" aria-hidden="true">
+      ↗
+    </span>
   </a>
 ))}

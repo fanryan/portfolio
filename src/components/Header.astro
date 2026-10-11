@@ -19,7 +19,10 @@ const links = [
       <a href={link.href}>{link.label}</a>
     ))}
     <a class="nav-contact" href="/#contact">
-      LET’S TALK ↗
+      LET’S TALK{' '}
+      <span class="text-arrow" aria-hidden="true">
+        ↗
+      </span>
     </a>
   </nav>
   <details class="mobile-menu">
@@ -30,14 +33,32 @@ const links = [
       {links.map((link) => (
         <a href={link.href}>{link.label}</a>
       ))}
-      <a href="/#contact">Let’s talk ↗</a>
+      <a href="/#contact">
+        Let’s talk{' '}
+        <span class="text-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </a>
     </nav>
   </details>
 </header>
 <script>
-  const header = document.querySelector('.header');
-  const updateHeader = () =>
-    header?.classList.toggle('scrolled', window.scrollY > 80);
+  const header = document.querySelector('.header') as HTMLElement | null;
+  const hero = document.querySelector('.hero') as HTMLElement | null;
+  const clamp = (value: number) => Math.max(0, Math.min(1, value));
+  const phase = (progress: number, start: number, end: number) =>
+    clamp((progress - start) / (end - start));
+  const ease = (value: number) => value * value * (3 - 2 * value);
+  const updateHeader = () => {
+    const offset = hero ? hero.offsetHeight * 0.8 : 700;
+    const progress = clamp(window.scrollY / offset);
+    const mask = ease(phase(progress, 0.04, 0.23));
+    const alpha = 0.08 + mask * 0.72;
+    if (header) {
+      header.style.setProperty('--header-alpha', alpha.toFixed(3));
+      header.classList.toggle('scrolled', progress > 0.05);
+    }
+  };
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
   document

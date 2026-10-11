@@ -48,7 +48,10 @@ const { project } = Astro.props;
           </a>
           <figcaption>
             <a href={project.media.src} target="_blank" rel="noopener">
-              Open full-size image ↗
+              Open full-size image{' '}
+              <span class="text-arrow" aria-hidden="true">
+                ↗
+              </span>
             </a>
           </figcaption>
         </figure>
@@ -74,7 +77,10 @@ const { project } = Astro.props;
       target="_blank"
       rel="noopener noreferrer"
     >
-      {project.name === 'NUSpot' ? 'Explore the app ↗' : 'Explore the code ↗'}
+      {project.name === 'NUSpot' ? 'Explore the app' : 'Explore the code'}
+      <span class="text-arrow" aria-hidden="true">
+        ↗
+      </span>
     </a>
   </article>
 </BaseLayout>

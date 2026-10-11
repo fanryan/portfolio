@@ -230,18 +230,18 @@
   }
   .reel-track figure {
     flex-basis: auto;
-    width: min(78vw, 440px);
+    width: min(86vw, 500px);
     scroll-snap-align: center;
   }
   .reel-track figure:first-child {
-    width: min(54vw, 308px);
+    width: min(62vw, 360px);
     scroll-snap-align: center;
   }
   .reel-track img {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 58vh;
+    max-height: 68vh;
     object-fit: contain;
     object-position: center;
   }
