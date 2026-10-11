@@ -186,10 +186,16 @@
   width: 100%;
   height: auto;
 }
-.project-screenshot span {
-  display: block;
+.project-screenshot > span {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
   padding: 18px 0;
   font-size: 13px;
+}
+.project-screenshot .text-arrow {
+  display: inline-block;
+  padding: 0;
 }
 .project-media {
   margin: 56px 0;
