@@ -1,4 +1,5 @@
 .header {
+  --header-alpha: 0.08;
   position: fixed;
   top: 0;
   left: 0;
@@ -9,14 +10,13 @@
   justify-content: space-between;
   padding: 28px 4vw;
   color: var(--paper);
-  background: rgba(18, 17, 15, 0);
+  background: rgba(18, 17, 15, var(--header-alpha));
   border-bottom: 1px solid rgba(255, 255, 255, 0);
   transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    padding-block 180ms ease,
-    box-shadow 180ms ease,
-    backdrop-filter 180ms ease;
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    backdrop-filter 220ms ease;
 }
 .wordmark {
   text-decoration: none;
@@ -138,9 +138,7 @@ footer > div {
 }
 
 .header.scrolled {
-  background: rgba(18, 17, 15, 0.78);
   border-bottom-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-  padding-block: 16px;
   backdrop-filter: blur(12px);
 }
