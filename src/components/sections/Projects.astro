@@ -9,7 +9,14 @@ import Tags from '../ui/Tags.astro';
   <SectionHeading
     number="03"
     title="Projects"
-    note="All repositories ↗"
+    note={
+      <>
+        All repositories{' '}
+        <span class="text-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </>
+    }
     href={site.github}
   />
   <div class="project-grid">
