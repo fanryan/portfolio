@@ -256,7 +256,8 @@
 
 @media (max-width: 899px) {
   .enhanced .name-window {
-    background-position: 57% 40%;
+    background-size: auto 100svh;
+    background-position: 57% calc(100% - 100svh + 100px);
   }
   .enhanced .introduction {
     padding: 16svh 6vw 24px;
