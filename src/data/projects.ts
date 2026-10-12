@@ -69,7 +69,7 @@ export const projects: Project[] = [
       width: 2940,
       height: 1570,
       notes: [
-        'The map view shows how the team-built app presents events by location and category. I contributed across the product and engineering work while also supporting sprint coordination, release setup and project documentation.',
+        'The map view shows how the team-built app presents events by location and category.',
       ],
     },
     label: 'Campus discovery · team project',
