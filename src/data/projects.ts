@@ -18,9 +18,9 @@ export const projects: Project[] = [
     },
     label: 'Payment processing & settlement',
     summary:
-      'A Go backend modelling payment authorisation, capture and settlement. Built to explore retries, concurrent balance changes and partial failures.',
+      'A Go backend for payment authorisation, capture and settlement, designed to explore retries, concurrency and partial-failure handling.',
     details: [
-      'Implemented payment holds, durable idempotency records and optimistic concurrency control.',
+      'Implemented payment holds, durable idempotency records and optimistic concurrency controls.',
       'Connected PostgreSQL transactions to Kafka through an outbox, with workers for event publishing and settlement.',
       'Added operational metrics and load-test scenarios for retries, contention and processing backlogs.',
     ],
@@ -47,11 +47,11 @@ export const projects: Project[] = [
     },
     label: 'Double-entry accounting & reconciliation',
     summary:
-      'A Spring Boot backend that records transactions, preserves an audit trail and checks account balances against their ledger entries. It includes a prototype consumer for PayCore-style events.',
+      'A Spring Boot backend for transaction posting, reconciliation and audit tracking, with a prototype consumer for PayCore-style event flows.',
     details: [
       'Built a shared transaction-processing path for API requests and incoming payment events.',
       'Implemented double-entry posting, reversals and duplicate-event handling.',
-      'Added reconciliation reports and a recovery path for failed events, with integration tests using PostgreSQL and Kafka.',
+      'Added reconciliation reporting and recovery paths for failed events, with PostgreSQL and Kafka integration tests.',
     ],
     stack: ['Java', 'Spring Boot', 'PostgreSQL', 'Kafka', 'Testcontainers'],
     flow: ['Record', 'Balance', 'Reconcile'],
@@ -69,16 +69,16 @@ export const projects: Project[] = [
       width: 2940,
       height: 1570,
       notes: [
-        'The map view shows how the team-built app presents events by location and category. My contribution focused on deployment, sprint coordination and documentation.',
+        'The map view shows how the team-built app presents events by location and category. I contributed across the product and engineering work while also supporting sprint coordination, release setup and project documentation.',
       ],
     },
     label: 'Campus discovery · team project',
     summary:
-      'A team-built app for discovering and organising spontaneous activities around NUS. I set up deployment and worked on sprint planning, task coordination and documentation.',
+      'A team-built app for discovering and organising spontaneous activities around NUS. Built alongside the team and supported sprint coordination, release setup and project documentation as the product developed.',
     details: [
-      'Set up GitHub Actions and Firebase deployment before the first sprint, giving the team a working release process from the start.',
-      'Maintained the backlog and coordinated work across sprints.',
-      'Wrote and maintained project documentation covering product decisions, development processes and delivery.',
+      'Contributed across the product and engineering flow, working alongside the team on the app build.',
+      'Helped keep delivery moving across sprints with task planning and coordination.',
+      'Supported release setup and maintained project documentation as the product evolved.',
     ],
     stack: ['Vue', 'Firebase', 'GitHub Actions', 'Leaflet', 'OpenAI API'],
     flow: ['Discover', 'Organise', 'Join'],
