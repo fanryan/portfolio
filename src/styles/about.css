@@ -72,13 +72,17 @@
   line-height: 1.4;
 }
 .travel-facts {
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: end;
   align-items: baseline;
-  gap: 48px;
+  column-gap: 48px;
+  row-gap: 12px;
   margin: -32px 0 60px;
 }
 .travel-fact-label {
+  grid-column: 1 / -1;
+  justify-self: start;
   color: var(--quiet);
   font: 10px var(--font-mono);
   text-transform: uppercase;
@@ -175,8 +179,8 @@
     padding-top: 30px;
   }
   .travel-facts {
-    justify-content: flex-start;
-    gap: 30px;
+    justify-content: start;
+    column-gap: 30px;
     margin: -24px 0 44px;
   }
   .travel-facts strong {

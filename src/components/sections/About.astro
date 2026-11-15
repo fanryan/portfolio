@@ -10,7 +10,7 @@ import PhotoJournal from '../PhotoJournal.astro';
     <p>{about.description}</p>
   </div>
   <div class="travel-facts" aria-label="Travel highlights">
-    <span class="travel-fact-label">Fun fact</span>
+    <span class="travel-fact-label">Fun fact!</span>
     <p>
       <strong>39</strong>
       <span>countries visited</span>
@@ -37,3 +37,12 @@ import PhotoJournal from '../PhotoJournal.astro';
   </div>
   <PhotoJournal />
 </section>
+<script>
+  const exchangeCountries = document.querySelector<HTMLDetailsElement>(
+    '.exchange-countries',
+  );
+
+  exchangeCountries?.addEventListener('mouseenter', () => {
+    exchangeCountries.open = true;
+  });
+</script>
