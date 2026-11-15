@@ -83,7 +83,7 @@ footer > div {
   align-items: end;
 }
 .contact h2 {
-  font-size: clamp(70px, 13vw, 190px);
+  font-size: clamp(56px, 9vw, 128px);
   margin: 20px 0 35px;
 }
 .contact p:not(.eyebrow) {

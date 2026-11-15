@@ -59,12 +59,12 @@
   font: 700 20px var(--font-mono);
 }
 .about {
-  background: var(--paper);
+  background: linear-gradient(#e8e5df, var(--paper) 320px);
   padding-top: 60px;
 }
 .about-intro {
-  max-width: 630px;
-  margin: 0 0 60px auto;
+  max-width: 720px;
+  margin: 0 0 28px;
   font-size: clamp(22px, 3vw, 36px);
   letter-spacing: -0.035em;
 }
@@ -72,36 +72,37 @@
   line-height: 1.4;
 }
 .travel-facts {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  justify-content: end;
+  display: flex;
+  max-width: 720px;
+  justify-content: flex-start;
   align-items: baseline;
-  column-gap: 48px;
-  row-gap: 12px;
-  margin: -32px 0 60px;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0 0 60px;
 }
 .travel-fact-label {
-  grid-column: 1 / -1;
-  justify-self: start;
   color: var(--quiet);
-  font: 10px var(--font-mono);
+  font: 12px var(--font-mono);
   text-transform: uppercase;
 }
-.travel-facts p,
+.travel-fact-copy,
 .exchange-countries summary {
   display: flex;
   align-items: baseline;
   gap: 9px;
-  margin: 0;
-  font: 11px var(--font-mono);
+  font: 12px var(--font-mono);
   text-transform: uppercase;
 }
 .travel-facts strong {
   color: var(--forest);
-  font-size: 32px;
-  letter-spacing: -0.07em;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 .exchange-countries {
+  display: inline-flex;
   position: relative;
 }
 .exchange-countries summary {
@@ -145,15 +146,29 @@
 .country-popover ul {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 9px;
+  gap: 7px;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.exchange-countries summary strong {
+  color: var(--focus);
+  font: 400 28px / 1 var(--font-body);
+  letter-spacing: 0.02em;
+  transition: color 160ms ease;
+}
+.exchange-countries:hover summary strong,
+.exchange-countries:focus-within summary strong,
+.exchange-countries[open] summary strong {
+  color: #6b5129;
 }
 .country-popover li {
   display: grid;
   place-items: center;
   font-size: 20px;
+}
+.country-popover li + li {
+  margin-top: 0;
 }
 .country-popover li img {
   width: 22px;
@@ -180,10 +195,10 @@
   }
   .travel-facts {
     justify-content: start;
-    column-gap: 30px;
+    gap: 8px;
     margin: -24px 0 44px;
   }
   .travel-facts strong {
-    font-size: 28px;
+    font-size: 25px;
   }
 }

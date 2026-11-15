@@ -57,7 +57,7 @@ h3 {
   line-height: 1.03;
 }
 h2 {
-  font-size: clamp(48px, 7.8vw, 116px);
+  font-size: clamp(44px, 5.4vw, 80px);
 }
 h3 {
   font-size: clamp(26px, 2.5vw, 40px);

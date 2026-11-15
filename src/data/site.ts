@@ -36,7 +36,7 @@ export const hero = {
 
 export const about = {
   description:
-    'Most weekends involve floorball, bouldering, snowboarding or planning the next trip.',
+    'Most weekends involve floorball, bouldering or planning the next trip.',
 };
 
 export const exchangeCountries = [
@@ -75,6 +75,5 @@ export const exchangeCountries = [
 
 export const contact = {
   heading: 'Say hello',
-  description:
-    'Got a role in mind, a project question or just something to say? Drop me an email.',
+  description: 'Got anything? Drop me an email!',
 };
