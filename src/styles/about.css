@@ -60,7 +60,6 @@
 }
 .about {
   background: linear-gradient(#e8e5df, var(--paper) 320px);
-  padding-top: 60px;
 }
 .about-intro {
   max-width: 720px;
@@ -194,9 +193,6 @@
   .stack-group h3 .eyebrow {
     display: inline;
     margin-right: 16px;
-  }
-  .about {
-    padding-top: 30px;
   }
   .travel-facts {
     justify-content: start;
