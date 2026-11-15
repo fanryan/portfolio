@@ -103,6 +103,7 @@
 }
 .exchange-countries {
   display: inline-flex;
+  margin-top: 0;
   position: relative;
 }
 .exchange-countries summary {
@@ -113,6 +114,10 @@
   border-top: 0;
 }
 .exchange-countries summary::-webkit-details-marker {
+  display: none;
+}
+.exchange-countries summary::after {
+  content: '';
   display: none;
 }
 .exchange-countries summary > span,
@@ -197,6 +202,27 @@
     justify-content: start;
     gap: 8px;
     margin: -24px 0 44px;
+  }
+  .exchange-countries {
+    margin-top: 0;
+  }
+  .exchange-countries summary {
+    align-items: center;
+  }
+  .exchange-countries summary::after {
+    content: '↓';
+    display: inline-block;
+    color: var(--focus);
+    font: 20px / 1 var(--font-body);
+    transform: translateY(-1px);
+  }
+  .exchange-countries[open] summary::after {
+    content: '↑';
+  }
+  .country-popover {
+    left: 0;
+    right: auto;
+    width: min(360px, calc(100vw - 48px));
   }
   .travel-facts strong {
     font-size: 25px;

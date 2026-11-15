@@ -41,10 +41,12 @@ import PhotoJournal from '../PhotoJournal.astro';
     '.exchange-countries',
   );
 
-  exchangeCountries?.addEventListener('mouseenter', () => {
-    exchangeCountries.open = true;
-  });
-  exchangeCountries?.addEventListener('mouseleave', () => {
-    exchangeCountries.open = false;
-  });
+  if (exchangeCountries && window.innerWidth > 740) {
+    exchangeCountries.addEventListener('mouseenter', () => {
+      exchangeCountries.open = true;
+    });
+    exchangeCountries.addEventListener('mouseleave', () => {
+      exchangeCountries.open = false;
+    });
+  }
 </script>

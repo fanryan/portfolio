@@ -50,3 +50,41 @@ test('hero card proportions stay visually consistent between mobile and desktop'
   expect(desktopMinRatio).toBeGreaterThan(0.65);
   expect(desktopMaxRatio).toBeLessThan(2.4);
 });
+
+test('exchange countries disclosure stays clear and in-bounds on mobile', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#about');
+
+  const disclosure = page.locator('.exchange-countries');
+  const summary = disclosure.locator('summary');
+  const popover = disclosure.locator('.country-popover');
+
+  await summary.scrollIntoViewIfNeeded();
+  await expect(disclosure).not.toHaveAttribute('open', '');
+  await expect
+    .poll(() =>
+      summary.evaluate((element) =>
+        getComputedStyle(element, '::after').content.replaceAll('"', ''),
+      ),
+    )
+    .toBe('↓');
+
+  await summary.click();
+  await expect(disclosure).toHaveAttribute('open', '');
+  await expect
+    .poll(() =>
+      summary.evaluate((element) =>
+        getComputedStyle(element, '::after').content.replaceAll('"', ''),
+      ),
+    )
+    .toBe('↑');
+
+  const bounds = await popover.evaluate((element) => {
+    const rect = element.getBoundingClientRect();
+    return { left: rect.left, right: rect.right, viewportWidth: innerWidth };
+  });
+  expect(bounds.left).toBeGreaterThanOrEqual(0);
+  expect(bounds.right).toBeLessThanOrEqual(bounds.viewportWidth);
+});
