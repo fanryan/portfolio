@@ -45,10 +45,10 @@
   background: var(--paper);
   color: var(--ink);
 }
-details {
+.disclosure {
   margin-top: 24px;
 }
-summary {
+.disclosure summary {
   list-style: none;
   display: flex;
   align-items: center;
@@ -59,22 +59,22 @@ summary {
   cursor: pointer;
   font-size: 13px;
 }
-summary::-webkit-details-marker {
+.disclosure summary::-webkit-details-marker {
   display: none;
 }
-summary > span {
+.disclosure summary > span {
   font-size: 22px;
   transition: transform 0.2s;
 }
-details[open] summary > span {
+.disclosure[open] summary > span {
   transform: rotate(45deg);
 }
-details ul {
+.disclosure ul {
   padding-left: 18px;
   font-size: 15px;
   margin: 6px 0 24px;
 }
-details li + li {
+.disclosure li + li {
   margin-top: 12px;
 }
 .tags {
@@ -96,6 +96,7 @@ figcaption {
   font-size: 12px;
   padding: 17px 0;
 }
+/* Content sections reflow at 740px; navigation uses its wider 900px breakpoint. */
 @media (max-width: 740px) {
   .section {
     padding: 76px 24px;

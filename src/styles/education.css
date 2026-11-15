@@ -1,13 +1,13 @@
 #education {
   position: relative;
-  background: linear-gradient(#e8e5df, var(--paper) 320px);
+  background: var(--section-wash);
 }
 .education-spread {
   display: grid;
   grid-template-columns: 1fr;
   align-items: start;
   gap: 0;
-  max-width: 1200px;
+  max-width: var(--content-wide);
   margin: 0 auto;
 }
 .school-grid {
@@ -57,7 +57,7 @@
   letter-spacing: -0.04em;
   margin: 0;
 }
-h4 {
+.school-card h4 {
   font-size: 14px;
   font-weight: 600;
 }

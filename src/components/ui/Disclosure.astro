@@ -6,7 +6,7 @@ interface Props {
 const { label, class: className } = Astro.props;
 ---
 
-<details class={className}>
+<details class:list={['disclosure', className]}>
   <summary>
     {label}
     <span aria-hidden="true">+</span>

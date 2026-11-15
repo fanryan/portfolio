@@ -1,65 +1,5 @@
-.toolkit {
-  background: linear-gradient(#e8e5df, var(--paper) 280px);
-}
-.stack-groups {
-  margin-top: 70px;
-}
-.stack-group {
-  display: grid;
-  grid-template-columns: 27% 1fr;
-  gap: 4vw;
-  padding: 32px 0;
-  border-top: 1px solid var(--border);
-}
-.stack-group h3 {
-  font-size: 25px;
-  line-height: 1.25;
-  letter-spacing: -0.035em;
-}
-.stack-group h3 .eyebrow {
-  display: block;
-  margin-bottom: 15px;
-  color: var(--quiet);
-}
-.stack-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 26px 22px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.stack-items li {
-  width: 90px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 13px;
-  font-size: 11px;
-  text-align: center;
-}
-.stack-icon {
-  width: 50px;
-  height: 50px;
-  display: grid;
-  place-items: center;
-}
-.stack-icon img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  filter: none;
-  opacity: 1;
-}
-.stack-icon.color img {
-  filter: none;
-  opacity: 1;
-}
-.stack-icon b {
-  font: 700 20px var(--font-mono);
-}
 .about {
-  background: linear-gradient(#e8e5df, var(--paper) 320px);
+  background: var(--section-wash);
 }
 .about-intro {
   max-width: 720px;
@@ -180,20 +120,6 @@
   object-fit: cover;
 }
 @media (max-width: 740px) {
-  .stack-group {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-  .stack-items {
-    gap: 24px 12px;
-  }
-  .stack-items li {
-    width: 76px;
-  }
-  .stack-group h3 .eyebrow {
-    display: inline;
-    margin-right: 16px;
-  }
   .travel-facts {
     justify-content: start;
     gap: 8px;

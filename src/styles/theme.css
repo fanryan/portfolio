@@ -7,6 +7,8 @@
   --border: #d1cec7;
   --focus: #8e774c;
   --backdrop: #11110ff2;
+  --content-wide: 1200px;
+  --section-wash: linear-gradient(var(--tint), var(--paper) 320px);
   --font-body: 'DM Sans Variable', sans-serif;
   --font-heading: 'DM Sans Variable', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;

@@ -93,6 +93,7 @@ footer > div {
 .contact .button {
   flex-shrink: 0;
 }
+/* Keep navigation readable slightly before the content layout reflows. */
 @media (max-width: 900px) {
   .desktop-nav {
     display: none;
@@ -106,9 +107,26 @@ footer > div {
     position: relative;
   }
   .mobile-menu summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
     border: 1px solid #ffffff70;
     padding: 8px 15px;
     border-radius: 30px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+  .mobile-menu summary > span {
+    font-size: 22px;
+    transition: transform 0.2s;
+  }
+  .mobile-menu[open] summary > span {
+    transform: rotate(45deg);
   }
   .mobile-menu nav {
     position: absolute;
