@@ -71,6 +71,91 @@
 .about-intro p {
   line-height: 1.4;
 }
+.travel-facts {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 48px;
+  margin: -32px 0 60px;
+}
+.travel-fact-label {
+  color: var(--quiet);
+  font: 10px var(--font-mono);
+  text-transform: uppercase;
+}
+.travel-facts p,
+.exchange-countries summary {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin: 0;
+  font: 11px var(--font-mono);
+  text-transform: uppercase;
+}
+.travel-facts strong {
+  color: var(--forest);
+  font-size: 32px;
+  letter-spacing: -0.07em;
+}
+.exchange-countries {
+  position: relative;
+}
+.exchange-countries summary {
+  list-style: none;
+  cursor: pointer;
+  justify-content: flex-start;
+  padding: 0;
+  border-top: 0;
+}
+.exchange-countries summary::-webkit-details-marker {
+  display: none;
+}
+.exchange-countries summary > span,
+.exchange-countries[open] summary > span {
+  font-size: inherit;
+  transform: none;
+}
+.country-popover {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: calc(100% + 14px);
+  width: min(360px, 82vw);
+  padding: 18px;
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 0 16px 40px #0002;
+}
+.exchange-countries:hover .country-popover,
+.exchange-countries:focus-within .country-popover,
+.exchange-countries[open] .country-popover {
+  display: block;
+}
+.country-popover p {
+  margin-bottom: 14px;
+  color: #b7b4ad;
+  font: 10px var(--font-mono);
+  text-transform: uppercase;
+}
+.country-popover ul {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.country-popover li {
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+.country-popover li img {
+  width: 22px;
+  height: 14px;
+  object-fit: cover;
+}
 @media (max-width: 740px) {
   .stack-group {
     grid-template-columns: 1fr;
@@ -88,5 +173,13 @@
   }
   .about {
     padding-top: 30px;
+  }
+  .travel-facts {
+    justify-content: flex-start;
+    gap: 30px;
+    margin: -24px 0 44px;
+  }
+  .travel-facts strong {
+    font-size: 28px;
   }
 }

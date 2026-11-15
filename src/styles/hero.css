@@ -71,6 +71,10 @@
 .intro-statement span {
   color: #aaa89f;
 }
+.intro-copy {
+  max-width: 22ch;
+  font-size: clamp(38px, 5vw, 76px);
+}
 .intro-description {
   font-size: 18px;
   max-width: 50ch;

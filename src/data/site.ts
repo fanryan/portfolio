@@ -36,10 +36,45 @@ export const hero = {
 
 export const about = {
   description:
-    'Floorball, bouldering, snowboarding and time outdoors take up a fair bit of my week. I have visited 39 countries, including 31 during my exchange.',
+    'Most weekends involve floorball, bouldering, snowboarding or planning the next trip.',
 };
 
+export const exchangeCountries = [
+  { name: 'Denmark', code: 'dk' },
+  { name: 'Faroe Islands', code: 'fo' },
+  { name: 'Italy', code: 'it' },
+  { name: 'Hungary', code: 'hu' },
+  { name: 'Austria', code: 'at' },
+  { name: 'Slovakia', code: 'sk' },
+  { name: 'Bosnia and Herzegovina', code: 'ba' },
+  { name: 'Montenegro', code: 'me' },
+  { name: 'Albania', code: 'al' },
+  { name: 'Belgium', code: 'be' },
+  { name: 'England', code: 'gb-eng' },
+  { name: 'Ireland', code: 'ie' },
+  { name: 'Poland', code: 'pl' },
+  { name: 'France', code: 'fr' },
+  { name: 'Luxembourg', code: 'lu' },
+  { name: 'Portugal', code: 'pt' },
+  { name: 'Spain', code: 'es' },
+  { name: 'Lithuania', code: 'lt' },
+  { name: 'Estonia', code: 'ee' },
+  { name: 'Latvia', code: 'lv' },
+  { name: 'Malta', code: 'mt' },
+  { name: 'Czechia', code: 'cz' },
+  { name: 'Germany', code: 'de' },
+  { name: 'Norway', code: 'no' },
+  { name: 'Sweden', code: 'se' },
+  { name: 'Greece', code: 'gr' },
+  { name: 'Cyprus', code: 'cy' },
+  { name: 'Monaco', code: 'mc' },
+  { name: 'Netherlands', code: 'nl' },
+  { name: 'Switzerland', code: 'ch' },
+  { name: 'Scotland', code: 'gb-sct' },
+];
+
 export const contact = {
-  heading: 'Get in touch',
-  description: 'For opportunities or questions about my projects, email me.',
+  heading: 'Say hello',
+  description:
+    'Got a role in mind, a project question or just something to say? Drop me an email.',
 };
