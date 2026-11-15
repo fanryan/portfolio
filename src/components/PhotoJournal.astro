@@ -12,13 +12,13 @@ const { photos = defaultPhotos, id = 'personal-photos' } = Astro.props;
   <div class="journal">
     <div class="journal-bar">
       <span class="eyebrow">
-        PHOTO NOTES{' '}
+        PERSONAL PHOTOS{' '}
         <span class="photo-total">
           / {String(photos.length).padStart(2, '0')}
         </span>
       </span>
       <div class="journal-controls">
-        <span>Scroll to browse · select to open</span>
+        <span>Drag to browse · click a photo to open</span>
         <button
           type="button"
           data-scroll="-1"

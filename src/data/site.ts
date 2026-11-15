@@ -3,9 +3,9 @@ export const site = {
   name: 'Ryan Fan',
   title: 'Ryan Fan — Software Engineering Portfolio',
   description:
-    'Ryan Fan, Business Analytics student at NUS focused on software engineering. Backend systems, data infrastructure, AI tooling, and a little life outside the laptop.',
+    'Ryan Fan is a Business Analytics student at NUS focused on backend systems, data infrastructure and AI tooling.',
   socialDescription:
-    'Backend systems, data infrastructure and AI tooling. Explore my work, experience and projects.',
+    'Software engineering portfolio of Ryan Fan, a Business Analytics student at NUS.',
   url: '',
   email: 'fanryan03@gmail.com',
   github: 'https://github.com/fanryan',
@@ -30,17 +30,16 @@ export const hero = {
     width: 825,
     height: 1100,
   },
-  caption: 'Nice to meet you.',
+  caption: 'Ryan Fan',
   interests: ['BACKEND SYSTEMS', 'DATA INFRASTRUCTURE', 'AI TOOLING'],
 };
 
 export const about = {
   description:
-    'Floorball, bouldering and time outdoors take up a fair bit of my week. I love travelling, and I’m often looking for somewhere new to explore.',
+    'Floorball, bouldering, snowboarding and time outdoors take up a fair bit of my week. I have visited 39 countries, including 31 during my exchange.',
 };
 
 export const contact = {
-  heading: 'Let’s talk',
-  description:
-    'For opportunities, questions about my projects or a conversation about software, feel free to reach out.',
+  heading: 'Get in touch',
+  description: 'For opportunities or questions about my projects, email me.',
 };
