@@ -49,12 +49,12 @@ export const photos: Photo[] = [
     height: 960,
   },
   {
-    src: '/images/photo2.jpg',
-    caption: 'Raffles Hall Floorball',
-    category: 'With the team',
-    alt: 'The Raffles Hall floorball team together on an indoor court',
+    src: '/images/editorial/scuba-diving.jpg',
+    caption: 'Scuba diving',
+    category: 'In the water',
+    alt: 'A group of friends in scuba gear floating in the sea',
     position: '50% 50%',
-    width: 1000,
-    height: 666,
+    width: 1600,
+    height: 1195,
   },
 ];
