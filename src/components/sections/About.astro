@@ -45,4 +45,7 @@ import PhotoJournal from '../PhotoJournal.astro';
   exchangeCountries?.addEventListener('mouseenter', () => {
     exchangeCountries.open = true;
   });
+  exchangeCountries?.addEventListener('mouseleave', () => {
+    exchangeCountries.open = false;
+  });
 </script>
