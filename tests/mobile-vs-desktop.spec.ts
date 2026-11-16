@@ -51,6 +51,67 @@ test('hero card proportions stay visually consistent between mobile and desktop'
   expect(desktopMaxRatio).toBeLessThan(2.4);
 });
 
+test('reel heading clears the fixed header on desktop and mobile', async ({
+  page,
+}) => {
+  for (const viewport of [
+    { width: 390, height: 844 },
+    { width: 1440, height: 900 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto('/');
+    await page.evaluate(() => {
+      const hero = document.querySelector<HTMLElement>('.hero')!;
+      const stage = hero.querySelector<HTMLElement>('.hero-stage')!;
+      window.scrollTo(0, (hero.offsetHeight - stage.offsetHeight) * 0.72);
+    });
+
+    await expect
+      .poll(() =>
+        page
+          .locator('.opening-reel')
+          .evaluate((element) =>
+            Number.parseFloat(getComputedStyle(element).opacity),
+          ),
+      )
+      .toBeGreaterThan(0.99);
+
+    const positions = await page.evaluate(() => {
+      const header = document.querySelector('.header')!.getBoundingClientRect();
+      const heading = document
+        .querySelector('.reel-heading')!
+        .getBoundingClientRect();
+      return { headerBottom: header.bottom, headingTop: heading.top };
+    });
+    expect(positions.headingTop).toBeGreaterThan(positions.headerBottom);
+  }
+});
+
+test('personal photo thumbnails use a consistent 16:9 crop', async ({
+  page,
+}) => {
+  for (const viewport of [
+    { width: 390, height: 844 },
+    { width: 1440, height: 900 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto('/#about');
+    await page.locator('.journal-strip').scrollIntoViewIfNeeded();
+
+    const ratios = await page
+      .locator('.journal-photo img')
+      .evaluateAll((images: HTMLImageElement[]) =>
+        images.map((image) => {
+          const rect = image.getBoundingClientRect();
+          return rect.width / rect.height;
+        }),
+      );
+
+    expect(ratios).toHaveLength(6);
+    ratios.forEach((ratio) => expect(ratio).toBeCloseTo(16 / 9, 1));
+  }
+});
+
 test('exchange countries disclosure stays clear and in-bounds on mobile', async ({
   page,
 }) => {

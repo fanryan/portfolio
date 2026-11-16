@@ -13,13 +13,13 @@ export const photos: Photo[] = [
     height: 1636,
   },
   {
-    src: '/images/mddi-scholarship-ceremony-2026.png',
+    src: '/images/editorial/mddi-scholarship-ceremony-2026.jpg',
     caption: 'MDDI Family Scholarship Ceremony 2026',
     category: 'Scholarship',
-    alt: 'SG Digital Scholarship recipients and guests at the MDDI Family Scholarship Ceremony 2026',
+    alt: 'Ryan receiving an SG Digital Scholarship at the MDDI Family Scholarship Ceremony 2026',
     position: '50% 50%',
-    width: 1280,
-    height: 852,
+    width: 1600,
+    height: 1067,
   },
   {
     src: '/images/editorial/mirror.webp',

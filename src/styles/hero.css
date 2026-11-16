@@ -187,7 +187,7 @@
 .enhanced .opening-reel {
   position: absolute;
   inset: 0;
-  padding-top: max(88px, 11svh);
+  padding-top: max(146px, 16svh);
   opacity: var(--reel);
   transform: translateY(calc((1 - var(--reel)) * 80px));
   pointer-events: none;
@@ -201,6 +201,7 @@
 }
 .enhanced .reel-next {
   pointer-events: auto;
+  transform: translateY(-36px);
 }
 @media (max-width: 899px) {
   .arrival {
@@ -275,7 +276,7 @@
     font-size: 16px;
   }
   .enhanced .opening-reel {
-    padding-top: max(90px, 12svh);
+    padding-top: max(124px, 15svh);
   }
   .enhanced .reel-track img {
     height: auto;
@@ -285,6 +286,7 @@
   }
   .enhanced .reel-next {
     margin-top: 24px;
+    transform: translateY(-24px);
   }
 }
 @media (max-height: 500px) {
