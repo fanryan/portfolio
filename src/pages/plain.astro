@@ -92,7 +92,8 @@ import '../styles/recruiter.css';
             )}
             {school.exchange && (
               <p class="recruiter-exchange">
-                Exchange: {school.exchange.name} · {school.exchange.dates}
+                Study exchange · {school.exchange.name} ·{' '}
+                {school.exchange.dates.replace(' · EXCHANGE', '')}
               </p>
             )}
           </div>

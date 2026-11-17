@@ -8,14 +8,14 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 28px 6vw;
+  padding: 28px 4vw;
 }
 .recruiter-header {
   border-bottom: 1px solid var(--border);
 }
 .recruiter-wordmark {
   color: var(--ink);
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 850;
   letter-spacing: -0.08em;
   line-height: 0.84;
@@ -43,7 +43,7 @@
 .recruiter-intro,
 .recruiter-section,
 .recruiter-closing {
-  padding: 80px max(6vw, 24px);
+  padding: 80px max(4vw, 24px);
 }
 .recruiter-intro {
   background: var(--section-wash);
@@ -151,9 +151,6 @@
   gap: 16px;
   margin-top: 24px;
   font-size: 13px;
-}
-.recruiter-toolkit {
-  background: var(--tint);
 }
 .recruiter-skill-group {
   display: grid;
