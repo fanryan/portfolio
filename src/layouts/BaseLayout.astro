@@ -6,12 +6,19 @@ import themeCss from '../styles/theme.css?raw';
 import { site } from '../data/site';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import RecruiterHeader from '../components/RecruiterHeader.astro';
+import RecruiterFooter from '../components/RecruiterFooter.astro';
 import Analytics from '@vercel/analytics/astro';
 interface Props {
   title?: string;
   description?: string;
+  variant?: 'portfolio' | 'plain';
 }
-const { title = site.title, description = site.description } = Astro.props;
+const {
+  title = site.title,
+  description = site.description,
+  variant = 'portfolio',
+} = Astro.props;
 // Derive browser chrome from the CSS source of truth rather than duplicating a hex value.
 const themeColor = themeCss.match(/--forest:\s*([^;]+);/)?.[1].trim();
 const canonical = site.url
@@ -38,15 +45,15 @@ const canonical = site.url
     )}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
-  <body>
+  <body class:list={[{ 'recruiter-page': variant === 'plain' }]}>
     <a class="skip" href="#main">
       Skip to content
     </a>
-    <Header />
+    {variant === 'plain' ? <RecruiterHeader /> : <Header />}
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    {variant === 'plain' ? <RecruiterFooter /> : <Footer />}
     <Analytics />
   </body>
 </html>

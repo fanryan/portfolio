@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+import { experience } from '../data/experience';
+import { education } from '../data/education';
+import { projects } from '../data/projects';
+import { stack } from '../data/stack';
+import '../styles/recruiter.css';
+---
+
+<BaseLayout
+  variant="plain"
+  title="Ryan Fan — Plain text portfolio"
+  description="A concise overview of Ryan Fan's experience, education, projects and technical toolkit."
+>
+  <section class="recruiter-intro">
+    <p class="eyebrow">Plain text portfolio</p>
+    <h1>Ryan Fan</h1>
+    <p class="recruiter-lead">
+      Business Analytics student at NUS working across backend systems, data
+      infrastructure and AI tooling.
+    </p>
+    <p class="recruiter-status">
+      Expected 2028 · Incoming Software Engineer Intern at TikTok, Jan 2027
+    </p>
+    <div class="recruiter-links">
+      <a href={`mailto:${site.email}`}>
+        Email Ryan{' '}
+        <span class="text-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </a>
+      <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
+        LinkedIn{' '}
+        <span class="text-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </a>
+      <a href={site.github} target="_blank" rel="noopener noreferrer">
+        GitHub{' '}
+        <span class="text-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="recruiter-section" aria-labelledby="recruiter-work">
+    <p class="eyebrow">01</p>
+    <h2 id="recruiter-work">Work</h2>
+    <div class="recruiter-list">
+      {experience.map((role) => (
+        <article class="recruiter-entry">
+          <div class="recruiter-entry-meta">
+            <p class="date">{role.dates}</p>
+            <p>{role.company}</p>
+          </div>
+          <div>
+            <h3>{role.role}</h3>
+            <p class="recruiter-label">{role.label}</p>
+            <p>{role.summary}</p>
+            {role.details.length > 0 && (
+              <ul>
+                {role.details.slice(0, 2).map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="recruiter-section" aria-labelledby="recruiter-education">
+    <p class="eyebrow">02</p>
+    <h2 id="recruiter-education">Education</h2>
+    <div class="recruiter-list">
+      {education.map((school) => (
+        <article class="recruiter-entry">
+          <div class="recruiter-entry-meta">
+            <p class="date">{school.dates}</p>
+          </div>
+          <div>
+            <h3>{school.name}</h3>
+            <p>{school.qualification}</p>
+            <p class="recruiter-result">
+              {school.result.label}: <strong>{school.result.value}</strong>
+            </p>
+            {school.awards.length > 0 && (
+              <p class="recruiter-awards">{school.awards.join(' · ')}</p>
+            )}
+            {school.exchange && (
+              <p class="recruiter-exchange">
+                Exchange: {school.exchange.name} · {school.exchange.dates}
+              </p>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="recruiter-section" aria-labelledby="recruiter-projects">
+    <p class="eyebrow">03</p>
+    <h2 id="recruiter-projects">Selected projects</h2>
+    <div class="recruiter-projects">
+      {projects.map((project) => (
+        <article>
+          <p class="eyebrow">{project.label}</p>
+          <h3>{project.name}</h3>
+          <p>{project.summary}</p>
+          <div class="recruiter-project-links">
+            <a href={`/projects/${project.name.toLowerCase()}/`}>
+              Read more{' '}
+              <span class="text-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+            <a
+              href={project.repository}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source{' '}
+              <span class="text-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section
+    class="recruiter-section recruiter-toolkit"
+    aria-labelledby="recruiter-toolkit"
+  >
+    <p class="eyebrow">04</p>
+    <h2 id="recruiter-toolkit">Technical toolkit</h2>
+    <div>
+      {stack.map((group) => (
+        <div class="recruiter-skill-group">
+          <h3>{group.title}</h3>
+          <p>{group.items.map((item) => item.name).join(' · ')}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="recruiter-closing">
+    <p>Interested in something here?</p>
+    <a href={`mailto:${site.email}`}>
+      Drop me an email{' '}
+      <span class="text-arrow" aria-hidden="true">
+        ↗
+      </span>
+    </a>
+  </section>
+</BaseLayout>

@@ -18,6 +18,12 @@ const links = [
     {links.map((link) => (
       <a href={link.href}>{link.label}</a>
     ))}
+    <a class="nav-plain" href="/plain">
+      View site in plain text
+      <span class="text-arrow" aria-hidden="true">
+        ↗
+      </span>
+    </a>
     <a class="nav-contact" href="/#contact">
       CONTACT{' '}
       <span class="text-arrow" aria-hidden="true">
@@ -33,6 +39,12 @@ const links = [
       {links.map((link) => (
         <a href={link.href}>{link.label}</a>
       ))}
+      <a href="/plain">
+        View site in plain text{' '}
+        <span class="text-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </a>
       <a href="/#contact">
         Contact{' '}
         <span class="text-arrow" aria-hidden="true">

@@ -43,6 +43,12 @@
   padding: 13px 19px;
   margin-left: 15px;
 }
+.nav-plain {
+  font-family: var(--font-mono);
+  font-size: 10px !important;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
 .mobile-menu {
   display: none;
 }

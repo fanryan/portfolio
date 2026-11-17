@@ -112,6 +112,23 @@ test('personal photo thumbnails use a consistent 16:9 crop', async ({
   }
 });
 
+test('plain text view presents the portfolio content without the animated hero', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/plain');
+
+  await expect(page.getByRole('heading', { name: 'Ryan Fan' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Work' })).toBeVisible();
+  await expect(
+    page.getByRole('heading', { name: 'Selected projects' }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: /Back to full site/ }),
+  ).toBeVisible();
+  await expect(page.locator('.hero')).toHaveCount(0);
+});
+
 test('exchange countries disclosure stays clear and in-bounds on mobile', async ({
   page,
 }) => {
