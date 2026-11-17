@@ -188,7 +188,7 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-@media (max-width: 740px) {
+@media (max-width: 900px) {
   .recruiter-header,
   .recruiter-footer {
     padding: 24px;

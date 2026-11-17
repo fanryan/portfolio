@@ -3,12 +3,11 @@ import { photos as defaultPhotos } from '../data/photos';
 import type { Photo } from '../types/content';
 interface Props {
   photos?: Photo[];
-  id?: string;
 }
-const { photos = defaultPhotos, id = 'personal-photos' } = Astro.props;
+const { photos = defaultPhotos } = Astro.props;
 ---
 
-<photo-journal>
+<div class="photo-journal">
   <div class="journal">
     <div class="journal-bar">
       <span class="eyebrow">
@@ -17,23 +16,6 @@ const { photos = defaultPhotos, id = 'personal-photos' } = Astro.props;
           / {String(photos.length).padStart(2, '0')}
         </span>
       </span>
-      <div class="journal-controls">
-        <span>Drag to browse · click a photo to open</span>
-        <button
-          type="button"
-          data-scroll="-1"
-          aria-label="Scroll to previous photos"
-        >
-          ←
-        </button>
-        <button
-          type="button"
-          data-scroll="1"
-          aria-label="Scroll to next photos"
-        >
-          →
-        </button>
-      </div>
     </div>
     <div
       class="journal-strip"
@@ -52,48 +34,17 @@ const { photos = defaultPhotos, id = 'personal-photos' } = Astro.props;
             <span>{photo.category}</span>
             <span>{String(i + 1).padStart(2, '0')}</span>
           </div>
-          <a
-            href={photo.src}
-            data-photo={i}
-            data-caption={photo.caption}
-            aria-label={`View photo: ${photo.caption}`}
-          >
-            <img
-              src={photo.src}
-              alt={photo.alt}
-              width={photo.width}
-              height={photo.height}
-              loading="lazy"
-              style={`object-position:${photo.position}`}
-            />
-            <span class="photo-open text-arrow" aria-hidden="true">
-              ↗
-            </span>
-          </a>
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            width={photo.width}
+            height={photo.height}
+            loading="lazy"
+            style={`object-position:${photo.position}`}
+          />
           <figcaption>{photo.caption}</figcaption>
         </figure>
       ))}
     </div>
   </div>
-  <dialog class="photo-dialog" aria-labelledby={`${id}-caption`}>
-    <div class="viewer-top">
-      <span data-counter aria-live="polite"></span>
-      <button type="button" data-close autofocus>
-        Close ×
-      </button>
-    </div>
-    <img data-full-photo alt="" />
-    <div class="viewer-bottom">
-      <button type="button" data-prev aria-label="Previous photo">
-        ←
-      </button>
-      <p id={`${id}-caption`} data-caption-text aria-live="polite"></p>
-      <button type="button" data-next aria-label="Next photo">
-        →
-      </button>
-    </div>
-  </dialog>
-</photo-journal>
-<script>
-  import '../scripts/photo-journal';
-</script>
+</div>

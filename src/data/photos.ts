@@ -1,14 +1,14 @@
 import type { Photo } from '../types/content';
 
-// Add photos here; the gallery and full-photo viewer update automatically.
+// Add photos here; the gallery updates automatically.
 // Keep source images in public/images. Use an accurate caption and descriptive alt text.
 export const photos: Photo[] = [
   {
     src: '/images/photo1.jpg',
-    caption: 'Out for a hike',
+    caption: 'Hiking Tre Cime',
     category: 'Outdoors',
     alt: 'Friends on a rocky summit surrounded by mountains and clouds',
-    position: '50% 75%',
+    position: '50% 65%',
     width: 1090,
     height: 1636,
   },
@@ -26,7 +26,7 @@ export const photos: Photo[] = [
     caption: 'Taiwan trip with RHAG Floaters',
     category: 'With friends',
     alt: 'Friends reflected in a roadside mirror',
-    position: '50% 50%',
+    position: '50% 65%',
     width: 960,
     height: 1280,
   },
@@ -50,7 +50,7 @@ export const photos: Photo[] = [
   },
   {
     src: '/images/editorial/scuba-diving.jpg',
-    caption: 'Scuba diving',
+    caption: 'Diving in Tioman',
     category: 'In the water',
     alt: 'A group of friends in scuba gear floating in the sea',
     position: '50% 50%',

@@ -6,7 +6,7 @@ type HeroFigureMetrics = {
   ratio: number;
 };
 
-async function readHeroFigureRatios(
+async function readHeroImageRatios(
   page: any,
   width: number,
   height: number,
@@ -17,10 +17,10 @@ async function readHeroFigureRatios(
   await page.locator('.opening-reel').scrollIntoViewIfNeeded();
 
   return page
-    .locator('.reel-track figure')
-    .evaluateAll((figures: HTMLElement[]) =>
-      figures.map((figure: HTMLElement) => {
-        const rect = figure.getBoundingClientRect();
+    .locator('.reel-track img')
+    .evaluateAll((images: HTMLImageElement[]) =>
+      images.map((image: HTMLImageElement) => {
+        const rect = image.getBoundingClientRect();
         const ratio = rect.width / rect.height;
         return {
           width: rect.width,
@@ -31,24 +31,31 @@ async function readHeroFigureRatios(
     );
 }
 
-test('hero card proportions stay visually consistent between mobile and desktop', async ({
+test('hero reel keeps wide portrait wide framing on mobile and desktop', async ({
   page,
 }) => {
-  const mobile = await readHeroFigureRatios(page, 390, 844);
-  const desktop = await readHeroFigureRatios(page, 1440, 900);
+  const mobile = await readHeroImageRatios(page, 390, 844);
+  const desktop = await readHeroImageRatios(page, 1440, 900);
 
-  expect(mobile.length).toBeGreaterThan(0);
-  expect(desktop.length).toBeGreaterThan(0);
+  expect(mobile).toHaveLength(3);
+  expect(desktop).toHaveLength(3);
 
-  const mobileMinRatio = Math.min(...mobile.map((item) => item.ratio));
-  const mobileMaxRatio = Math.max(...mobile.map((item) => item.ratio));
-  const desktopMinRatio = Math.min(...desktop.map((item) => item.ratio));
-  const desktopMaxRatio = Math.max(...desktop.map((item) => item.ratio));
+  for (const ratios of [mobile, desktop]) {
+    expect(ratios[0].ratio).toBeCloseTo(4 / 3, 1);
+    expect(ratios[1].ratio).toBeCloseTo(3 / 4, 1);
+    expect(ratios[2].ratio).toBeCloseTo(4 / 3, 1);
+  }
 
-  expect(mobileMinRatio).toBeGreaterThan(0.35);
-  expect(mobileMaxRatio).toBeLessThan(1.7);
-  expect(desktopMinRatio).toBeGreaterThan(0.65);
-  expect(desktopMaxRatio).toBeLessThan(2.4);
+  await page.goto('/');
+  await expect(page.locator('.reel-track figure').nth(0)).toContainText(
+    'WITH THE TEAM',
+  );
+  await expect(page.locator('.reel-track figure').nth(1)).toContainText(
+    'MONZA, ITALY',
+  );
+  await expect(page.locator('.reel-track figure').nth(2)).toContainText(
+    'SECEDA, ITALY',
+  );
 });
 
 test('reel heading clears the fixed header on desktop and mobile', async ({
@@ -109,6 +116,9 @@ test('personal photo thumbnails use a consistent 16:9 crop', async ({
 
     expect(ratios).toHaveLength(6);
     ratios.forEach((ratio) => expect(ratio).toBeCloseTo(16 / 9, 1));
+
+    await expect(page.locator('.journal-photo a')).toHaveCount(0);
+    await expect(page.locator('.photo-dialog')).toHaveCount(0);
   }
 });
 
@@ -127,6 +137,27 @@ test('plain text view presents the portfolio content without the animated hero',
     page.getByRole('link', { name: /Back to full site/ }),
   ).toBeVisible();
   await expect(page.locator('.hero')).toHaveCount(0);
+});
+
+test('plain text page shares the mobile header and content inset', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 768, height: 900 });
+  await page.goto('/');
+  const portfolioWordmarkX = await page
+    .locator('.wordmark')
+    .evaluate((element) => element.getBoundingClientRect().x);
+
+  await page.goto('/plain');
+  const plainWordmarkX = await page
+    .locator('.recruiter-wordmark')
+    .evaluate((element) => element.getBoundingClientRect().x);
+  const plainContentX = await page
+    .locator('.recruiter-intro > .eyebrow')
+    .evaluate((element) => element.getBoundingClientRect().x);
+
+  expect(plainWordmarkX).toBeCloseTo(portfolioWordmarkX, 1);
+  expect(plainContentX).toBeCloseTo(plainWordmarkX, 1);
 });
 
 test('exchange countries disclosure stays clear and in-bounds on mobile', async ({
