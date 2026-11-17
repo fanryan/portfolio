@@ -45,6 +45,9 @@ test('hero reel keeps wide portrait wide framing on mobile and desktop', async (
     expect(ratios[1].ratio).toBeCloseTo(3 / 4, 1);
     expect(ratios[2].ratio).toBeCloseTo(4 / 3, 1);
   }
+  expect(mobile[0].width).toBeLessThanOrEqual(390 * 0.82 + 1);
+  expect(mobile[1].width).toBeLessThanOrEqual(390 * 0.47 + 1);
+  expect(mobile[2].width).toBeLessThanOrEqual(390 * 0.82 + 1);
 
   await page.goto('/');
   await expect(page.locator('.reel-track figure').nth(0)).toContainText(

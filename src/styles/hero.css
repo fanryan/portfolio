@@ -242,7 +242,7 @@
     display: none;
   }
   .reel-track {
-    --reel-card-height: min(62svh, 440px);
+    --reel-card-height: min(62svh, 61.5vw);
     gap: 24px;
     scroll-snap-type: x mandatory;
   }
@@ -253,7 +253,7 @@
     transform: translateY(12px);
   }
   .enhanced .reel-track {
-    --reel-card-height: min(62svh, 440px);
+    --reel-card-height: min(62svh, 61.5vw);
   }
   .reel-track img {
     display: block;
