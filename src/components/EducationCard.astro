@@ -39,7 +39,8 @@ const { school } = Astro.props;
               alt={`${school.activities.group} crest`}
               width="459"
               height="504"
-              loading="lazy"
+              loading="eager"
+              fetchpriority="low"
             />
           )}
           <h4>{school.activities.group}</h4>
