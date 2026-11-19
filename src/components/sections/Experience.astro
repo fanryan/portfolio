@@ -3,6 +3,9 @@ import { experience } from '../../data/experience';
 import SectionHeading from '../ui/SectionHeading.astro';
 import Tags from '../ui/Tags.astro';
 import Disclosure from '../ui/Disclosure.astro';
+
+const logoSrc = (logo: string) =>
+  `/images/${logo.includes('.') ? logo : `${logo}.png`}`;
 ---
 
 <section id="experience" class="section">
@@ -17,7 +20,7 @@ import Disclosure from '../ui/Disclosure.astro';
           <span class="timeline-dot" aria-hidden="true"></span>
           <img
             class="company-logo"
-            src={`/images/${job.logo}.png`}
+            src={logoSrc(job.logo)}
             alt={job.company}
             loading="lazy"
             width="160"

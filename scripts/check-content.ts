@@ -30,7 +30,8 @@ external(site.github);
 external(site.linkedin);
 if (site.url) external(site.url);
 asset(hero.portrait.src);
-for (const job of experience) asset(`/images/${job.logo}.png`);
+for (const job of experience)
+  asset(`/images/${job.logo.includes('.') ? job.logo : `${job.logo}.png`}`);
 unique(
   projects.map((project) => project.repository),
   'project repository',

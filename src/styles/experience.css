@@ -27,10 +27,10 @@
   object-fit: contain;
   object-position: left center;
 }
-.experience-row:first-child .company-logo {
+.company-logo[alt='TikTok'] {
   width: 135px;
 }
-.experience-row:nth-child(2) .company-logo {
+.company-logo[alt='CSIT'] {
   width: 125px;
 }
 .timeline-dot {
