@@ -44,7 +44,7 @@ export const experience: Experience[] = [
     logo: 'secretlab',
     role: 'Data Engineer Intern',
     dates: 'JAN — MAY 2026',
-    label: 'Data infrastructure',
+    label: 'Data Platform',
     summary:
       'Worked on the infrastructure behind data pipelines and reporting, from deploying Airflow to making dashboard refreshes depend on actual data readiness.',
     details: [
