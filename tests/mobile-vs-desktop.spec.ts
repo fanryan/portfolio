@@ -97,6 +97,32 @@ test('reel heading clears the fixed header on desktop and mobile', async ({
   }
 });
 
+test('company logos share one consistent size on desktop and mobile', async ({
+  page,
+}) => {
+  for (const viewport of [
+    { width: 390, height: 844 },
+    { width: 1440, height: 900 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto('/#experience');
+    const logoBoxes = await page
+      .locator('.company-logo')
+      .evaluateAll((logos: HTMLImageElement[]) =>
+        logos.map((logo) => {
+          const rect = logo.getBoundingClientRect();
+          return { width: rect.width, height: rect.height };
+        }),
+      );
+
+    expect(logoBoxes).toHaveLength(5);
+    logoBoxes.forEach((box) => {
+      expect(box.width).toBeCloseTo(logoBoxes[0].width, 1);
+      expect(box.height).toBeCloseTo(logoBoxes[0].height, 1);
+    });
+  }
+});
+
 test('personal photo thumbnails use a consistent 16:9 crop', async ({
   page,
 }) => {

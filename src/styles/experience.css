@@ -27,12 +27,6 @@
   object-fit: contain;
   object-position: left center;
 }
-.company-logo[alt='TikTok'] {
-  width: 135px;
-}
-.company-logo[alt='CSIT'] {
-  width: 125px;
-}
 .timeline-dot {
   display: none;
 }
