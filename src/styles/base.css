@@ -11,6 +11,9 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
+html.scene-scrolling {
+  scroll-behavior: auto;
+}
 body {
   margin: 0;
 }

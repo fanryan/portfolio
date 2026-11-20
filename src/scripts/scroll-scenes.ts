@@ -33,6 +33,7 @@ if (hero) {
     const distance = target - start;
     const startedAt = performance.now();
     sceneLock = true;
+    document.documentElement.classList.add('scene-scrolling');
 
     const tick = (now: number) => {
       const progress = Math.min(1, (now - startedAt) / duration);
@@ -40,7 +41,10 @@ if (hero) {
       window.scrollTo(0, start + distance * eased);
 
       if (progress < 1) requestAnimationFrame(tick);
-      else sceneLock = false;
+      else {
+        sceneLock = false;
+        document.documentElement.classList.remove('scene-scrolling');
+      }
     };
 
     requestAnimationFrame(tick);
@@ -68,7 +72,7 @@ if (hero) {
 
     moveToScene(
       hero.offsetTop + targetProgress * scrollDistance,
-      targetProgress === 0.42 ? 900 : 650,
+      targetProgress === 0.42 ? 650 : 550,
     );
   };
   const configure = () => {
