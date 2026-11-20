@@ -248,10 +248,14 @@
     aspect-ratio: var(--project-media-ratio);
   }
   .flow {
-    font-size: 36px;
+    gap: 7px;
+    font-size: clamp(24px, 7.5vw, 30px);
+  }
+  .flow b {
+    font-size: 14px;
   }
   .project-content h3 {
-    font-size: 54px;
+    font-size: clamp(38px, 10vw, 44px);
   }
   .project-carousel-footer {
     margin-top: 28px;

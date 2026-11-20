@@ -27,6 +27,7 @@ if (carousel) {
   let dragged = false;
   let suppressClick = false;
   let transitioning = false;
+  let transitionTimer = 0;
 
   const setPosition = (dragOffset = 0) => {
     const activeSlide = slides[position];
@@ -52,11 +53,14 @@ if (carousel) {
     position += direction;
     transitioning = true;
     render();
+    window.clearTimeout(transitionTimer);
+    transitionTimer = window.setTimeout(finishTransition, 650);
   };
   const release = () => {
     if (pointerId === undefined) return;
 
-    viewport.releasePointerCapture(pointerId);
+    if (viewport.hasPointerCapture(pointerId))
+      viewport.releasePointerCapture(pointerId);
     if (Math.abs(offsetX) > 48) move(offsetX < 0 ? 1 : -1);
     else render();
     suppressClick = dragged;
@@ -76,6 +80,12 @@ if (carousel) {
       requestAnimationFrame(() => track.classList.remove('is-jumping'));
     });
   };
+  const finishTransition = () => {
+    if (!transitioning) return;
+    transitioning = false;
+    window.clearTimeout(transitionTimer);
+    resetLoop();
+  };
 
   previous.addEventListener('click', () => move(-1));
   next.addEventListener('click', () => move(1));
@@ -92,7 +102,6 @@ if (carousel) {
   viewport.addEventListener('pointerdown', (event) => {
     if (event.pointerType === 'mouse' && event.button !== 0) return;
     if (transitioning) return;
-    event.preventDefault();
     pointerId = event.pointerId;
     startX = event.clientX;
     offsetX = 0;
@@ -118,8 +127,7 @@ if (carousel) {
   );
   track.addEventListener('transitionend', (event) => {
     if (event.target !== track || event.propertyName !== 'transform') return;
-    transitioning = false;
-    resetLoop();
+    finishTransition();
   });
   window.addEventListener('resize', () => {
     track.classList.add('is-jumping');
