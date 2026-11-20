@@ -1,5 +1,9 @@
 import assert from 'node:assert/strict';
-import { openingState, clamp } from '../src/scripts/scene-math.ts';
+import {
+  clamp,
+  openingSnapPoints,
+  openingState,
+} from '../src/scripts/scene-math.ts';
 assert.equal(clamp(-1), 0);
 assert.equal(clamp(2), 1);
 assert.deepEqual(openingState(0), {
@@ -26,6 +30,7 @@ assert.equal(
 );
 assert.equal(openingState(0.62).travel, 0);
 assert.equal(openingState(1).travel, 1, 'Final photo must be reached');
+assert.deepEqual(openingSnapPoints, [0, 0.23, 0.42]);
 for (let i = 0; i <= 1000; i++) {
   const state = openingState(i / 1000);
   for (const value of Object.values(state)) assert(value >= 0 && value <= 1);

@@ -14,7 +14,7 @@ export const experience: Experience[] = [
   },
   {
     company: 'Revolut',
-    logo: 'revolut.svg',
+    logo: 'revolut.png',
     role: 'Software Engineer Intern',
     dates: 'JUL — SEP 2027',
     label: 'Customer Experience (CX)',

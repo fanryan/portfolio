@@ -2,6 +2,11 @@ export const clamp = (value: number) => Math.max(0, Math.min(1, value));
 export const phase = (progress: number, start: number, end: number) =>
   clamp((progress - start) / (end - start));
 export const ease = (value: number) => value * value * (3 - 2 * value);
+
+// Hold the name reveal and introduction, then let the reel scroll freely in
+// both directions.
+export const openingSnapPoints = [0, 0.23, 0.42] as const;
+
 export function openingState(progress: number) {
   return {
     mask: ease(phase(progress, 0.04, 0.23)),

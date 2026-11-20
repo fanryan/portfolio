@@ -61,6 +61,36 @@ test('hero reel keeps wide portrait wide framing on mobile and desktop', async (
   );
 });
 
+test('desktop wheel gestures hold at the name reveal and introduction', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+
+  const sceneScrollDistance = await page.evaluate(() => {
+    const hero = document.querySelector<HTMLElement>('.hero')!;
+    const stage = hero.querySelector<HTMLElement>('.hero-stage')!;
+    return hero.offsetHeight - stage.offsetHeight;
+  });
+
+  await page.mouse.wheel(0, 2400);
+  await expect
+    .poll(() => page.evaluate(() => window.scrollY))
+    .toBeGreaterThan(sceneScrollDistance * 0.23 - 10);
+  await expect
+    .poll(() => page.evaluate(() => window.scrollY))
+    .toBeLessThan(sceneScrollDistance * 0.23 + 10);
+
+  await page.waitForTimeout(100);
+  await page.mouse.wheel(0, 2400);
+  await expect
+    .poll(() => page.evaluate(() => window.scrollY))
+    .toBeGreaterThan(sceneScrollDistance * 0.42 - 10);
+  await expect
+    .poll(() => page.evaluate(() => window.scrollY))
+    .toBeLessThan(sceneScrollDistance * 0.42 + 10);
+});
+
 test('reel heading clears the fixed header on desktop and mobile', async ({
   page,
 }) => {
