@@ -79,6 +79,9 @@
   margin-top: clamp(24px, 4vh, 46px);
   max-width: 460px;
 }
+.currently.next-up {
+  margin-top: 22px;
+}
 .currently .eyebrow {
   color: #aaa89f;
   margin-bottom: 8px;

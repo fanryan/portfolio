@@ -50,6 +50,11 @@ export interface Education {
   qualification: string;
   result: { label: string; value: string };
   awards: string[];
-  activities: { group?: string; logo?: string; items: string[] };
+  activities: {
+    group?: string;
+    logo?: string;
+    items: string[];
+    teaching?: { logo: string; alt: string; items: string[] };
+  };
   exchange?: { name: string; logo: string; dates: string; description: string };
 }

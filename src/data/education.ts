@@ -29,6 +29,13 @@ export const education: Education[] = [
         'Member · RHDevelopers',
         'Member · Rag and Flag (Floats)',
       ],
+      teaching: {
+        logo: '/images/nus.png',
+        alt: 'NUS School of Computing',
+        items: [
+          'Undergraduate Teaching Assistant (BT1101 Introduction to Business Analytics)',
+        ],
+      },
     },
     exchange: {
       name: 'Aarhus University',

@@ -79,6 +79,15 @@
   height: 40px;
   object-fit: contain;
 }
+.activity-logo {
+  width: 130px;
+  height: 32px;
+  object-fit: contain;
+  object-position: left;
+}
+.activity-group + .activity-group {
+  margin-top: 22px;
+}
 .exchange {
   display: flex;
   gap: 18px;

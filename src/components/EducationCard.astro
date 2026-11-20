@@ -30,27 +30,48 @@ const { school } = Astro.props;
   )}
   {school.activities.items.length > 0 && (
     <Disclosure label="Activities" class="school-activities">
-      {school.activities.group && (
-        <div class="hall-heading">
-          {school.activities.logo && (
+      {school.activities.teaching && (
+        <div class="activity-group">
+          <div class="hall-heading">
             <img
-              class="hall-crest"
-              src={school.activities.logo}
-              alt={`${school.activities.group} crest`}
-              width="459"
-              height="504"
-              loading="eager"
-              fetchpriority="low"
+              class="activity-logo"
+              src={school.activities.teaching.logo}
+              alt={school.activities.teaching.alt}
+              width="230"
+              height="46"
+              loading="lazy"
             />
-          )}
-          <h4>{school.activities.group}</h4>
+          </div>
+          <ul>
+            {school.activities.teaching.items.map((activity) => (
+              <li>{activity}</li>
+            ))}
+          </ul>
         </div>
       )}
-      <ul>
-        {school.activities.items.map((activity) => (
-          <li>{activity}</li>
-        ))}
-      </ul>
+      <div class="activity-group">
+        {school.activities.group && (
+          <div class="hall-heading">
+            {school.activities.logo && (
+              <img
+                class="hall-crest"
+                src={school.activities.logo}
+                alt={`${school.activities.group} crest`}
+                width="459"
+                height="504"
+                loading="eager"
+                fetchpriority="low"
+              />
+            )}
+            <h4>{school.activities.group}</h4>
+          </div>
+        )}
+        <ul>
+          {school.activities.items.map((activity) => (
+            <li>{activity}</li>
+          ))}
+        </ul>
+      </div>
     </Disclosure>
   )}
   {school.exchange && (

@@ -63,11 +63,11 @@ export const projects: Project[] = [
     preview: true,
     media: {
       src: '/images/projects/nuspot-map.jpg',
-      thumbnail: '/images/projects/nuspot-map-preview.webp',
-      alt: 'NUSpot website with a campus map, event categories and an upcoming dinner event.',
+      thumbnail: '/images/projects/nuspot-map.jpg',
+      alt: 'NUSpot website with its campus map, legend and event filters.',
       title: 'Campus event discovery',
-      width: 2940,
-      height: 1570,
+      width: 1862,
+      height: 1286,
       notes: [
         'The map view shows how the team-built app presents events by location and category.',
       ],

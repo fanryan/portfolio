@@ -145,11 +145,112 @@ test('company logos share one consistent size on desktop and mobile', async ({
         }),
       );
 
-    expect(logoBoxes).toHaveLength(5);
+    expect(logoBoxes).toHaveLength(4);
     logoBoxes.forEach((box) => {
       expect(box.width).toBeCloseTo(logoBoxes[0].width, 1);
       expect(box.height).toBeCloseTo(logoBoxes[0].height, 1);
     });
+  }
+});
+
+test('project carousel snaps, cycles, and stays within the viewport', async ({
+  page,
+}) => {
+  for (const viewport of [
+    { width: 390, height: 844 },
+    { width: 1440, height: 900 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto(`/?project-carousel=${viewport.width}#projects`);
+
+    const carousel = page.locator('[data-project-carousel]');
+    const next = carousel.getByRole('button', { name: 'Next project' });
+    const activeProject = carousel.locator('.project.is-active h3');
+
+    await expect(activeProject).toHaveText('PayCore');
+    const framing = await carousel.evaluate((element) => {
+      const viewport = element.querySelector('.project-viewport')!;
+      const active = element.querySelector<HTMLElement>('.project.is-active')!;
+      const before = element.querySelector<HTMLElement>('.project.is-before')!;
+      const after = element.querySelector<HTMLElement>('.project.is-after')!;
+      const viewportRect = viewport.getBoundingClientRect();
+      const activeRect = active.getBoundingClientRect();
+      const beforeRect = before.getBoundingClientRect();
+      const afterRect = after.getBoundingClientRect();
+      return {
+        activeCenter: activeRect.left + activeRect.width / 2,
+        viewportCenter: viewportRect.left + viewportRect.width / 2,
+        beforeRight: beforeRect.right,
+        afterLeft: afterRect.left,
+        viewportLeft: viewportRect.left,
+        viewportRight: viewportRect.right,
+      };
+    });
+    expect(framing.activeCenter).toBeCloseTo(framing.viewportCenter, 0);
+    expect(framing.beforeRight).toBeGreaterThan(framing.viewportLeft);
+    expect(framing.afterLeft).toBeLessThan(framing.viewportRight);
+    await next.click();
+    await expect(activeProject).toHaveText('LedgerFlow');
+    await page.waitForTimeout(550);
+    await next.click();
+    await expect(activeProject).toHaveText('NUSpot');
+    await page.waitForTimeout(550);
+    await next.click();
+    await expect(activeProject).toHaveText('PayCore');
+    await page.waitForTimeout(550);
+    await expect(carousel.locator('.project.is-active')).not.toHaveAttribute(
+      'aria-hidden',
+      'true',
+    );
+
+    if (viewport.width === 390) {
+      await carousel.locator('.project-viewport').scrollIntoViewIfNeeded();
+      const box = await carousel.locator('.project-viewport').boundingBox();
+      if (!box) throw new Error('Project carousel viewport is not visible');
+      await page.mouse.move(box.x + box.width * 0.75, box.y + box.height * 0.4);
+      await page.mouse.down();
+      await page.mouse.move(box.x + box.width * 0.2, box.y + box.height * 0.4);
+      await page.mouse.up();
+      await expect(activeProject).toHaveText('LedgerFlow');
+    }
+
+    const bounds = await carousel
+      .locator('.project-viewport')
+      .evaluate((element) => {
+        const rect = element.getBoundingClientRect();
+        return {
+          left: rect.left,
+          right: rect.right,
+          viewportWidth: innerWidth,
+        };
+      });
+    expect(bounds.left).toBeGreaterThanOrEqual(0);
+    expect(bounds.right).toBeLessThanOrEqual(bounds.viewportWidth);
+  }
+});
+
+test('project visuals share a fixed uncropped frame', async ({ page }) => {
+  for (const viewport of [
+    { width: 390, height: 844 },
+    { width: 1440, height: 900 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto(`/?project-format=${viewport.width}#projects`);
+
+    const ratios = await page
+      .locator('.project-track > .project:not([aria-hidden])')
+      .evaluateAll((projects: HTMLElement[]) =>
+        projects.map((project) => {
+          const media = project.querySelector<HTMLElement>(
+            '.project-visual, .project-screenshot img',
+          )!;
+          const rect = media.getBoundingClientRect();
+          return rect.width / rect.height;
+        }),
+      );
+
+    expect(ratios).toHaveLength(3);
+    ratios.forEach((ratio) => expect(ratio).toBeCloseTo(4 / 3, 1));
   }
 });
 
